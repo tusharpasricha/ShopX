@@ -94,25 +94,9 @@ body{
       background-color: white;
       color: black;
   }
-  .feedbox1{
-      margin-top: 80px;
-    color: white;
-    margin-left:50px;
-    background-color: #e8cebf;
-    border-color: rgba(255, 255, 255, 0.822);
-    height: 275px;
-    width: 90%;
-    border-radius: 55px;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.883);
-    border-width: 6px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .feedbox2{
+  .feedbox{
       margin-top: 100px;
-    background-color: #ddaf94;
+    background-color: turquoise;
     border-radius: 55px;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.883);
@@ -121,31 +105,15 @@ body{
     
   }
   .newsfeeds{
-      margin-left: 140px;
-      margin-top: -200px;
-      background-color: #266150;
+      margin-left: 150px;
+      margin-top: 10px;
+      background-color: teal;
       width: 70%;
       height: 690px;
       justify-content: center;
     overflow-y: scroll;
     display: grid;
     grid-template-rows: auto auto auto ;
-    border-radius: 55px;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.883);
-    border-width: 6px;
-  }
-  .newscard{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 600px;
-    height: 300px;
-    border-radius: 20px;
-    background-color: #ffd5b5;
-    padding: 33px 10px 10px 33px; 
-    margin-top: 10px;
-    margin-left: 10px;
-    
   }
    .nav-center {
     height: 80px;
