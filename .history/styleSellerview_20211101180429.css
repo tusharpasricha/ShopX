@@ -19,7 +19,7 @@ body{
     background-color: #ffebc2;
     margin-top: 30px;
     /* margin-bottom: 20px; */
-    margin-left: 230px;
+    margin-left: 200px;
     margin-right: 60px;
     border-radius: 50px;
     width: 70%;
@@ -303,9 +303,9 @@ body{
         display: none;
     }
     .wrapper .sidebar .addpost{
-      background-color: #ffd5b5 ;
-            color: rgb(0, 0, 0);
-      width: 95%;
+      background: chocolate;
+      color: rgb(0, 0, 0);
+      width: 80%;
       padding: 10px;
       margin-left: 10px;
       margin-bottom: 10px;
@@ -318,8 +318,8 @@ body{
     .wrapper .sidebar .addpost button{
       background-color: black;
       color: rgb(235, 194, 119);
-      width: 20%;
-      margin-left: 20px;
+      width: 30%;
+      margin: 10px;
       padding: 10px;
       border-radius: 15px;
       font-size: 12px;
@@ -387,11 +387,12 @@ body{
     }
     
     .wrapper .section .top_navbar{
-        background: transparent;
-        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+        /* background: transparent; */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         margin-top: 50px;
         margin-bottom: -40px;
-        /* background-color: #ffebc2; */
+        /* background: #fdbc0c ; */
+        background-color: #ffebc2;
         height: 50px;
         display: flex;
         align-items: center;

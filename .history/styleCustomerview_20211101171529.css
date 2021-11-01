@@ -25,7 +25,7 @@ body{
 
   margin-top: 30px;
   /* margin-bottom: 20px; */
-  margin-left: 225px;
+  margin-left: 200px;
   margin-right: 60px;
   border-radius: 50px;
   width: 70%;
@@ -132,7 +132,7 @@ body{
   .newsfeeds{
       margin-left: 140px;
       margin-top: -200px;
-      background-color: rgb(255, 226, 194);
+      background-color: white;
       width: 70%;
       height: 690px;
       justify-content: center;

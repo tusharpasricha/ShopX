@@ -14,12 +14,11 @@ body{
         display: none;
     }
   .box1{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     /* background-image: linear-gradient(to right,#ffdd00f5,#fbaf34ef); */
     background-color: #ffebc2;
     margin-top: 30px;
     /* margin-bottom: 20px; */
-    margin-left: 230px;
+    margin-left: 200px;
     margin-right: 60px;
     border-radius: 50px;
     width: 70%;
@@ -29,8 +28,7 @@ body{
     border-width: 7px;
   }
   .box2{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    color: black;
+    color: white;
     margin-left:50px;
     background-color:#fdbc0c ;
     height: 275px;
@@ -43,33 +41,29 @@ body{
     justify-content: center;
   }
   .bar{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 50px;
+    border-radius: 10px;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.883);
-    border-width: 5px;
-      margin-top: 10px;
-      margin-left: 20px;
-      height: 100px;
-      width: 95%;
+    border-width: 3px;
+      margin-top: 30px;
+      height: 50px;
+      width: 100%;
       display: flex;
       justify-content: center;
-      background-color: #fdbc0c ;
-      color: rgb(12, 12, 12);
-      font-weight: bolder;
+      background-color: #ddaf94;;
+      color: white;
   }
   .block{
     /* background: transparent; */
-    background-color: #ffebc2;    /* margin-top: 100px; */
+    background-color: #723709;
+    /* margin-top: 100px; */
     margin-left: 70px;
     margin-bottom: 100px;
-    margin-top: -30px;
     width: 85%;
     height: 690px;
     overflow-y: scroll;
     display: grid;
     grid-template-columns: auto auto auto ; 
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     
   }
   .card{
@@ -110,26 +104,12 @@ body{
         height: 390px;
     }
     .productform{
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         margin: 50px;
         padding: 20px;
-        background-color: #ffd5b5 ;
+        background-color: #266150;
         width: 60%;
-        color: rgb(0, 0, 0);
+        color: white;
         
-        
-    }
-    .productform label{
-      margin: 10px;
-    }
-    .productform button {
-      background-color: black;
-      color: rgb(235, 194, 119);
-      width: 30%;
-      margin: 10px;
-      padding: 10px;
-      border-radius: 15px;
-      font-size: 12px;
     }
      .nav-center {
       height: 80px;
@@ -154,7 +134,7 @@ body{
     }
     
     .links li {
-      color: rgb(0, 0, 0);
+      color: white;
       font-size: 16px;
       padding: 10px;
       margin: 0 5px;
@@ -163,7 +143,7 @@ body{
     
     .links li a {
       
-      color: rgb(0, 0, 0);
+      color: white;
       font-weight: bolder;
       transition: color 0.4s ease-in-out;
       text-decoration: none;
@@ -264,11 +244,7 @@ body{
     
     
     .wrapper .sidebar{
-      border-radius: 55px;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.883);
-    border-width: 6px;
-      background-color: #fdbc0c ;
+        background:#266150;
         position: fixed;
         top: 0;
         left: 0;
@@ -291,43 +267,29 @@ body{
     }
     
     .wrapper .sidebar .profile h3{
-        color: #000000;
+        color: #ffffff;
         margin: 5px 0 5px;
     }
     
     .wrapper .sidebar .profile p{
-        color: rgb(0, 0, 0);
+        color: rgb(206, 240, 253);
         font-size: 14px;
     }
     .postbox::-webkit-scrollbar{
         display: none;
     }
     .wrapper .sidebar .addpost{
-      background-color: #ffd5b5 ;
-            color: rgb(0, 0, 0);
-      width: 95%;
+      background: chocolate;
+      color: white;
+      width: 60%;
       padding: 10px;
-      margin-left: 10px;
+      margin-left: 180px;
       margin-bottom: 10px;
       margin-top: -10px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    }
-    .wrapper .sidebar .addpost label{
-      margin: 10px;
-    }
-    .wrapper .sidebar .addpost button{
-      background-color: black;
-      color: rgb(235, 194, 119);
-      width: 20%;
-      margin-left: 20px;
-      padding: 10px;
-      border-radius: 15px;
-      font-size: 12px;
+
     }
     .wrapper .sidebar .postbox{
-        /* background-color: #ddaf94; */
-        background-color: #ffebc2;
-
+        background-color: #ddaf94;
         /* margin-top: 100px; */
         margin-left: 10px;
         margin-bottom: 100px;
@@ -343,7 +305,7 @@ body{
         width: 400px;
         height:300px;
         border-radius: 20px;
-        background-color: #ffd5b5;
+        background-color: #f5e2d4;
         /* padding: 10px 10px 10px 10px;  */
         margin-bottom: 0px;
          margin-top: 5px;
@@ -354,7 +316,7 @@ body{
         display: block;
         padding: 13px 30px;
         border-bottom: 1px solid #10558d;
-        color: rgb(0, 0, 0);
+        color: rgb(241, 237, 237);
         font-size: 16px;
         position: relative;
     }
@@ -387,11 +349,10 @@ body{
     }
     
     .wrapper .section .top_navbar{
-        background: transparent;
-        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+        /* background: transparent; */
         margin-top: 50px;
         margin-bottom: -40px;
-        /* background-color: #ffebc2; */
+        background: #351701c9;
         height: 50px;
         display: flex;
         align-items: center;
@@ -400,14 +361,13 @@ body{
     }
     
     .wrapper .section .top_navbar .hamburger a{
-        
+        margin-left: 20px;
         font-size: 20px;
-        color: #000000;
-        font-weight: bolder;
+        color: #f4fbff;
     }
     
     .wrapper .section .top_navbar .hamburger a:hover{
-        color: #0000009f;
+        color: #a2ecff;
     }
     body.active .wrapper .sidebar{
         left: -1800px;

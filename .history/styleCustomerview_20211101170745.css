@@ -25,7 +25,7 @@ body{
 
   margin-top: 30px;
   /* margin-bottom: 20px; */
-  margin-left: 225px;
+  margin-left: 200px;
   margin-right: 60px;
   border-radius: 50px;
   width: 70%;
@@ -35,7 +35,7 @@ body{
   border-width: 7px;
 }
 .box2{
- 
+  font-size: 100px;
   background-color:#fdbc0c ;
   color: white;
   margin-left:50px;
@@ -47,10 +47,6 @@ body{
   border-width: 6px;
   display: flex;
   justify-content: center;
-}
-.box2 .h2{
-  margin-top: 10px;
-  font-size: 10px;
 }
 
 .block{
@@ -102,11 +98,10 @@ body{
       color: black;
   }
   .feedbox1{
-    background-color: #fdbc0c;
-
       margin-top: 80px;
     color: white;
     margin-left:50px;
+    background-color: #e8cebf;
     border-color: rgba(255, 255, 255, 0.822);
     height: 275px;
     width: 90%;
@@ -119,9 +114,8 @@ body{
   }
 
   .feedbox2{
-    background-color: #ffebc2;
-
       margin-top: 100px;
+    background-color: #ddaf94;
     border-radius: 55px;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.883);
@@ -132,7 +126,7 @@ body{
   .newsfeeds{
       margin-left: 140px;
       margin-top: -200px;
-      background-color: rgb(255, 226, 194);
+      background-color: #266150;
       width: 70%;
       height: 690px;
       justify-content: center;
