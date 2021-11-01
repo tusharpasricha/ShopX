@@ -1,0 +1,33 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: tomato;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    background-color: tomato;
+}
+.bar{
+    margin: 50px;
+    padding: 50px;
+    background-color: teal;
+}
+.block{
+    margin: 50px;
+    padding: 50px;
+    height: 50%;
+    width: 65%;
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: auto auto ;
+    
+}
+.cont1{
+    background: yellowgreen;
+}
+.cont2 {
+    background: violet;
+}

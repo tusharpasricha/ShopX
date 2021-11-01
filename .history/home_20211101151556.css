@@ -1,0 +1,18 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: tomato;
+}
+.box{
+    background-color: tomato;
+}
+.bar{
+    background-color: teal;
+}
+.block{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+}
