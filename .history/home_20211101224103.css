@@ -78,7 +78,7 @@ body{
 .login, .signup{
     display: flex;
     background: transparent;
-   /* background-color: white; */
+   background-color: white;
    justify-content: center;
    padding: 0px;
    /* box-shadow: 5px 8px 22px rgb(8, 1, 26); */
@@ -168,13 +168,9 @@ body{
   }
 
   .sign{
-      margin-top: 20px;
+      margin-top: 5px;
     text-decoration: none;
     color: teal;
     text-align: center;
-  }
-  .sign a{
-      text-decoration: none;
-      color: teal;
-      
+
   }

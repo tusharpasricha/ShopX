@@ -168,13 +168,9 @@ body{
   }
 
   .sign{
-      margin-top: 20px;
+      margin-top: 5px;
     text-decoration: none;
     color: teal;
     text-align: center;
-  }
-  .sign a{
-      text-decoration: none;
-      color: teal;
-      
+
   }
