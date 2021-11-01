@@ -9,9 +9,7 @@ body{
     box-sizing: border-box;
     }
  
-    .block::-webkit-scrollbar{
-        display: none;
-    }
+  
   .box1{
     /* background-image: linear-gradient(to right,#ffdd00f5,#fbaf34ef); */
     background-color:#e8cebf ;
@@ -105,10 +103,8 @@ body{
     .productform{
         margin: 50px;
         padding: 20px;
-        background-color: #266150;
+        background-color: #ddaf94;
         width: 60%;
-        color: white;
-        
     }
      .nav-center {
       height: 80px;
@@ -277,16 +273,6 @@ body{
     .postbox::-webkit-scrollbar{
         display: none;
     }
-    .wrapper .sidebar .addpost{
-      background: chocolate;
-      color: white;
-      width: 60%;
-      padding: 10px;
-      margin-left: 180px;
-      margin-bottom: 10px;
-      margin-top: -10px;
-
-    }
     .wrapper .sidebar .postbox{
         background-color: #ddaf94;
         /* margin-top: 100px; */
@@ -360,7 +346,7 @@ body{
     }
     
     .wrapper .section .top_navbar .hamburger a{
-        margin-left: 20px;
+        margin-left: 30px;
         font-size: 20px;
         color: #f4fbff;
     }
