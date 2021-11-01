@@ -1,4 +1,7 @@
-
+var hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener("click", function(){
+    document.querySelector("body").classList.toggle("active");
+})
 const btn = document.querySelector(".nav-toggle");
 const links = document.querySelector(".toogle__items");
 
