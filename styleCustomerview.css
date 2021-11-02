@@ -84,6 +84,7 @@ body{
   
   .container {
     padding: 2px 16px;
+    margin-bottom: 10px;
     color: black;
   } 
   .enter{
@@ -146,7 +147,7 @@ body{
     border-width: 6px;
   }
   .newscard{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 #f9b185;
     transition: 0.3s;
     width: 600px;
     height: 300px;
