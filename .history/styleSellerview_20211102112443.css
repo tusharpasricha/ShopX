@@ -17,7 +17,7 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     /* background-image: linear-gradient(to right,#ffdd00f5,#fbaf34ef); */
     background-color: #ffebc2;
-    margin-top: 25px;
+    margin-top: 10px;
     /* margin-bottom: 20px; */
     margin-left: 230px;
     margin-right: 60px;
@@ -477,8 +477,7 @@ body{
         /* margin-top: 10px; */
         /* margin-bottom: -40px; */
         /* background-color: #ffebc2; */
-        /* margin-bottom: -70px;
-        height: 30px; */
+        height: 50px;
         display: flex;
         align-items: center;
         padding: 0 30px;

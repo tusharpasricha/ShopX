@@ -17,13 +17,13 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     /* background-image: linear-gradient(to right,#ffdd00f5,#fbaf34ef); */
     background-color: #ffebc2;
-    margin-top: 25px;
+    margin-top: 30px;
     /* margin-bottom: 20px; */
     margin-left: 230px;
     margin-right: 60px;
     border-radius: 50px;
     width: 70%;
-    height: 630px;
+    height: 680px;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.822);
     border-width: 7px;
@@ -99,84 +99,72 @@ body{
         text-decoration: none;
     }
     .addproduct{
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         border-radius: 55px;
         border-style: solid;
         border-color: rgba(255, 255, 255, 0.883);
         border-width: 6px;
         /* background-color: #ffeadf; */
-        /* background-color: black; */
-        background-color: white;
+        background-color: black;
         margin-top: -200px;
         margin-left: 120px;
         width: 75%;
         height: 390px;
     }
     .productform{
-      /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
-      margin-left: 460px;
-      margin-top: 20px;
-        /* margin: 20px; */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 50px;
         padding: 20px;
         /* background-color: #ffd5b5 ; */
-        width: 30%;
+        width: 60%;
         color: rgb(0, 0, 0);
-        background-color: rgb(255, 255, 255);
-        
+        background-color: blue;
         
     }
-    .postform .txtfield{
+    form .txt_field{
       position: relative;
       border-bottom: 2px solid #adadad;
-    }
-    .productform .txtfield{
-      position: relative;
-      border-bottom: 2px solid #adadad;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      
+      margin: 10px 0;
     
     }
     .txtfield label{
     position: absolute;
-    /* opacity: 0; */
-    top: 70%;
+    opacity: 0;
+    top: 50%;
     left: 5px;
     color: #adadad;
     transform: translateY(-50%);
     font-size: 16px;
     pointer-events: none;
     transition: .5s;
-    width: 100px;
-    /* background-color: teal; */
     }
     .txtfield input{
-      /* margin-top: 20px; */
+      padding: 10px 5px;
       height: 40px;
       font-size: 16px;
       border:none;
       outline: none;
-      margin-bottom: -25px;
     }
-    .txtfield span::before{
+    .txt_field span::before{
       content: '';
       position: absolute;
       top: 40px;
       left: 0;
       width: 0%;
       height: 2px;
-      background: #c49618;
+      background: #07273b;
       transition: .5s;
     }
-    .txtfield input:focus ~ label,
-    .txtfield input:valid ~ label{
+    .txt_field input:focus ~ label,
+    .txt_field input:valid ~ label{
       top: -5px;
-      color: #d9a926;
+      color: #2691d9;
     }
-    .txtfield input:focus ~ span::before,
-    .txtfield input:valid ~ span::before{
+    .txt_field input:focus ~ span::before,
+    .txt_field input:valid ~ span::before{
       width: 100%;
     }
-    /* .productform button {
+    .productform button {
       background-color: black;
       color: rgb(235, 194, 119);
       width: 30%;
@@ -184,29 +172,6 @@ body{
       padding: 10px;
       border-radius: 15px;
       font-size: 12px;
-    } */
-    .btn{
-      width: 70%;
-      height: 48px;
-      margin-top: 20px;
-      border: 1px solid;
-      text-transform: uppercase;
-      background-color: teal;
-      border-radius: 6px;
-      font-size: 18px;
-      color: #e9f4fb;
-      font-weight: 500;
-      cursor: pointer;
-      outline: none;
-     
-    }
-    
-    .btn:hover{
-      border:2px solid #074042;
-      color: white;
-      transition: .5s;
-      transform: scale(1.02);
-      border: none;
     }
      .nav-center {
       height: 80px;
@@ -342,21 +307,17 @@ body{
     
     .wrapper .sidebar{
       border-radius: 55px;
-      border-style: solid;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-
-      border-color: rgba(255, 255, 255, 0.883);
-       border-width: 6px;
-      /* background-color: #fdbc0c ; */
-      background-color: white;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.883);
+    border-width: 6px;
+      background-color: #fdbc0c ;
         position: fixed;
         top: 0;
         left: 0;
         width: 500px;
-        height: 92%;
+        height: 100%;
         padding: 20px 0;
         transition: all 0.5s ease;
-        margin-top: 30px;
     }
     .wrapper .sidebar .profile{
         margin-bottom: 30px;
@@ -372,34 +333,31 @@ body{
     }
     
     .wrapper .sidebar .profile h3{
-      margin-top: -50px;
         color: #000000;
-        /* margin: 5px 0 5px; */
+        margin: 5px 0 5px;
     }
     
     .wrapper .sidebar .profile p{
         color: rgb(0, 0, 0);
-        margin-top: -40px;
         font-size: 14px;
     }
     .postbox::-webkit-scrollbar{
         display: none;
     }
     .wrapper .sidebar .addpost{
-      /* background-color: #ffd5b5 ; */
-      background-color: rgb(255, 255, 255);
+      background-color: #ffd5b5 ;
             color: rgb(0, 0, 0);
-      width: 50%;
+      width: 95%;
       padding: 10px;
-      margin-left: 210px;
+      margin-left: 10px;
       margin-bottom: 10px;
-      margin-top: -60px;
-      /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+      margin-top: -10px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
-    /* .wrapper .sidebar .addpost label{
+    .wrapper .sidebar .addpost label{
       margin: 10px;
-    } */
-    /* .wrapper .sidebar .addpost button{
+    }
+    .wrapper .sidebar .addpost button{
       background-color: black;
       color: rgb(235, 194, 119);
       width: 20%;
@@ -407,17 +365,16 @@ body{
       padding: 10px;
       border-radius: 15px;
       font-size: 12px;
-    } */
+    }
     .wrapper .sidebar .postbox{
         /* background-color: #ddaf94; */
-        /* background-color: #ffffff; */
-        background: transparent;
+        background-color: #ffebc2;
 
         /* margin-top: 100px; */
         margin-left: 10px;
         margin-bottom: 100px;
         width: 95%;
-        height: 382px;
+        height: 550px;
         overflow-y: scroll;
         display: grid;
         grid-template-columns: auto; 
@@ -425,14 +382,14 @@ body{
     .wrapper .sidebar .post{
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
-        width: 300px;
-        height:200px;
+        width: 400px;
+        height:300px;
         border-radius: 20px;
         background-color: #ffd5b5;
         /* padding: 10px 10px 10px 10px;  */
         margin-bottom: 0px;
          margin-top: 5px;
-        margin-left: 65px;
+        margin-left: 35px;
         text-align: center;
     }
     .wrapper .sidebar ul li a{
@@ -473,12 +430,11 @@ body{
     
     .wrapper .section .top_navbar{
         background: transparent;
-        /* box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2); */
-        /* margin-top: 10px; */
-        /* margin-bottom: -40px; */
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+        margin-top: 50px;
+        margin-bottom: -40px;
         /* background-color: #ffebc2; */
-        /* margin-bottom: -70px;
-        height: 30px; */
+        height: 50px;
         display: flex;
         align-items: center;
         padding: 0 30px;
