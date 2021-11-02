@@ -371,21 +371,21 @@ body{
         margin-top: 30px;
     }
     .wrapper .sidebar .profile{
-        margin-bottom: 20px;
-        /* text-align: center; */
+        margin-bottom: 30px;
+        text-align: center;
     }
     
     .wrapper .sidebar .profile img{
-        /* display: block; */
+        display: block;
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        /* margin-left: -20px; */
-        margin-right: 20px;
+        margin-left: -20px;
+        margin-right: 10px;
     }
     
     .wrapper .sidebar .profile h6{
-      /* margin-top: -10px; */
+      margin-top: -10px;
         color: #000000;
         /* margin: 5px 0 5px; */
     }
@@ -431,7 +431,7 @@ body{
         margin-left: 10px;
         margin-bottom: 100px;
         width: 95%;
-        height: 409px;
+        height: 405px;
         overflow-y: scroll;
         display: grid;
         grid-template-columns: auto; 

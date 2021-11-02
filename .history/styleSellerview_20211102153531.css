@@ -324,7 +324,7 @@ body{
         align-items: center;
       }
     
-      .profile {
+      /* .profile {
         color: white;
         display: flex;
         flex-direction: column;
@@ -332,7 +332,7 @@ body{
         align-items: center;
         margin-right: 0;
       }
-    
+     */
       .links li a {
         color: #fff;
         translate: all 0.6s ease-in-out
