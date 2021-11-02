@@ -377,24 +377,23 @@ body{
     
     .wrapper .sidebar .profile img{
         display: block;
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
-        margin-left: -20px;
-        margin-right: 10px;
+        margin: 0 auto;
     }
     
-    .wrapper .sidebar .profile h6{
-      margin-top: -10px;
+    .wrapper .sidebar .profile h3{
+      margin-top: -50px;
         color: #000000;
         /* margin: 5px 0 5px; */
     }
     
-    /* .wrapper .sidebar .profile p{
+    .wrapper .sidebar .profile p{
         color: rgb(0, 0, 0);
         margin-top: -40px;
         font-size: 14px;
-    } */
+    }
     .postbox::-webkit-scrollbar{
         display: none;
     }
@@ -480,7 +479,7 @@ body{
     }
     .wrapper .section{
         width: calc(100% - 500px);
-        margin-left: 140px;
+        margin-left: 500px;
         transition: all 0.5s ease;
     }
     
@@ -495,8 +494,8 @@ body{
         color: white;
         /* display: flex;
         align-items: center; */
-        margin-bottom: -70px;
-        padding-left: 370px;
+        margin-bottom: -20px;
+        padding-left: 50px;
         padding-top: 70px;
         
         
@@ -510,7 +509,7 @@ body{
     }
     
     .wrapper .section .top_navbar .hamburger a:hover{
-        color: #000000;
+        color: #0000009f;
     }
     body.active .wrapper .sidebar{
         left: -1800px;

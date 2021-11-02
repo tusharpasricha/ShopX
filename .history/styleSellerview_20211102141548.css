@@ -373,6 +373,7 @@ body{
     .wrapper .sidebar .profile{
         margin-bottom: 30px;
         text-align: center;
+        margin-left: 0%;
     }
     
     .wrapper .sidebar .profile img{
@@ -380,8 +381,7 @@ body{
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        margin-left: -20px;
-        margin-right: 10px;
+        
     }
     
     .wrapper .sidebar .profile h6{

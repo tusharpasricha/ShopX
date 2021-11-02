@@ -371,8 +371,12 @@ body{
         margin-top: 30px;
     }
     .wrapper .sidebar .profile{
+      width: 55%;
         margin-bottom: 30px;
         text-align: center;
+        display: flex;
+        float: left;
+        background-color: brown;
     }
     
     .wrapper .sidebar .profile img{
@@ -380,12 +384,13 @@ body{
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        margin-left: -20px;
-        margin-right: 10px;
+        margin-left: 20px;
+        
     }
     
     .wrapper .sidebar .profile h6{
       margin-top: -10px;
+      margin-left: 20px;
         color: #000000;
         /* margin: 5px 0 5px; */
     }
@@ -400,13 +405,13 @@ body{
     }
     .wrapper .sidebar .addpost{
       /* background-color: #ffd5b5 ; */
-      background-color: rgb(255, 255, 255);
+      background-color: rgb(37, 6, 6);
             color: rgb(0, 0, 0);
-      width: 50%;
-      padding: 10px;
-      margin-left: 210px;
+      width: 47%;
+      padding: 0px;
+      margin-left: 265px;
       margin-bottom: 10px;
-      margin-top: -60px;
+      margin-top: 0px;
       /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
     }
     /* .wrapper .sidebar .addpost label{

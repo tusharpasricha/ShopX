@@ -371,8 +371,12 @@ body{
         margin-top: 30px;
     }
     .wrapper .sidebar .profile{
+      width: 80%;
         margin-bottom: 30px;
         text-align: center;
+        /* display: flex;
+        float: left; */
+        background-color: rgb(255, 255, 255);
     }
     
     .wrapper .sidebar .profile img{
@@ -380,12 +384,13 @@ body{
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        margin-left: -20px;
-        margin-right: 10px;
+        margin-left: 10px;
+        
     }
     
     .wrapper .sidebar .profile h6{
       margin-top: -10px;
+      margin-left: 10px;
         color: #000000;
         /* margin: 5px 0 5px; */
     }
@@ -401,17 +406,22 @@ body{
     .wrapper .sidebar .addpost{
       /* background-color: #ffd5b5 ; */
       background-color: rgb(255, 255, 255);
-            color: rgb(0, 0, 0);
-      width: 50%;
-      padding: 10px;
-      margin-left: 210px;
-      margin-bottom: 10px;
-      margin-top: -60px;
+      color: rgb(0, 0, 0);
+      width: 47%;
+      padding: 0px;
+      margin-left: 0px;
+      /* display: flex;
+      flex-direction: column; */
+      height: 200px;
+  
       /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
     }
-    /* .wrapper .sidebar .addpost label{
-      margin: 10px;
-    } */
+
+    .wrapper .sidebar .addpost .postform{
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row;
+    }
     /* .wrapper .sidebar .addpost button{
       background-color: black;
       color: rgb(235, 194, 119);

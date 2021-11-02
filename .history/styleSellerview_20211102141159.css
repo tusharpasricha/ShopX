@@ -384,17 +384,17 @@ body{
         margin-right: 10px;
     }
     
-    .wrapper .sidebar .profile h6{
+    .wrapper .sidebar .profile h3{
       margin-top: -10px;
         color: #000000;
         /* margin: 5px 0 5px; */
     }
     
-    /* .wrapper .sidebar .profile p{
+    .wrapper .sidebar .profile p{
         color: rgb(0, 0, 0);
         margin-top: -40px;
         font-size: 14px;
-    } */
+    }
     .postbox::-webkit-scrollbar{
         display: none;
     }
