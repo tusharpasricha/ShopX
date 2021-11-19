@@ -4,11 +4,15 @@
 }
 body{
     background-color: #fdbc0c;
+  /* background-image: linear-gradient(to bottom right,#fec196,#f0835c); */
+
 }
 .box{
     display: flex;
     /* justify-content: center; */
     background-color: #fdbc0c;
+  /* background-image: linear-gradient(to bottom right,#fec196,#f0835c); */
+
     flex-direction: column;
     align-items: center;
     margin-top: 60px;

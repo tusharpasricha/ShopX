@@ -1,5 +1,8 @@
 body{
-  background-color:#fec196 ;
+  /* background-color:#fec196 ; */
+  background-image: linear-gradient(to bottom right,#fec196,#f0835c);
+  overflow-y: hidden;
+
     }
 * {
     margin: 0;
@@ -19,13 +22,13 @@ body{
     background-image: linear-gradient(to top left,#ffebc2,#ffce7e);
 
     /* background-color: #ffebc2; */
-    margin-top: 25px;
+    /* margin-top: 5px; */
     /* margin-bottom: 20px; */
-    margin-left: 230px;
+    margin-left: 225px;
     margin-right: 60px;
     border-radius: 50px;
     width: 70%;
-    height: 630px;
+    height: 680px;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.822);
     border-width: 7px;
