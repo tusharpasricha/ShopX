@@ -1,3 +1,6 @@
+<?php
+    require('./login/db_connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 

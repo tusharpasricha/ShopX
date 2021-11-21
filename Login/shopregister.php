@@ -15,9 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $cpassword = $_POST["cpassword"];
   $exists = false;
   $check_user = mysqli_query($conn, "SELECT user_name FROM user where user_name = '$username' ");
-  if (!$check_user) {
-    die("SQL query failed: " . mysqli_error($conn));
-  }
   if (mysqli_num_rows($check_user) > 0) {
     echo ('username Already exists');
   } else {
@@ -27,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $row = mysqli_fetch_assoc($res);
       if ($result) {
         if ($row['acc_type'] == 1101)
-          header('Location:./shopregister.php');
-        echo "success";
+
+          echo "success";
       } else {
         echo "failed";
       }
@@ -67,12 +64,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="signup">
           <div class="box2">
             <form action="../login/signup.php" method="post" id="loginForm">
-              <h2>SignUp</h2>
+              <h2>Create your Shop</h2>
               <div class="txt_field mb-3">
-                <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" name="name" placeholder="Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label">Shop Name</label>
+                <input type="text" name="name" placeholder="Shop Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
               </div>
-              <div>
+              <div class="txt_field mb-3">
+                <label for="exampleInputEmail1" class="form-label">GSTIN</label>
+                <input type="alphanumeric" name="gstin" placeholder="GSTIN" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+              </div>
+              <!-- <div>
                 <label for="exampleInputEmail1" class="form-label">Account Type</label>
               </div>
               <div class="form-check-inline">
@@ -104,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class=" txt_field mb-3">
                 <label for="exampleInputPassword1" class="form-label"> Confirm password</label>
                 <input type="password" placeholder="Confirm Password" name="cpassword" class="form-control" id="exampleInputPassword2">
-              </div>
+              </div> -->
 
               <button type="submit" class="btn"> SignUp</button>
             </form>
