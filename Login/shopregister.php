@@ -3,38 +3,22 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $err = false;
   include './db_connect.php';
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  if (isset($_POST['radio'])) {
-    $acc_type = $_POST['radio'];
+  $sname = $_POST["sname"];
+  $gstin = $_POST["gstin"];
+  $locality = $_POST["locality"];
+  $state = $_POST["state"];
+  $city = $_POST["city"];
+  $pincode = $_POST["pincode"];
+  $ownerid = $_GET['user'];
+  $sql = "INSERT INTO `shop` (`owner_id`, `gst_in`, `shop_name`, `state`, `city`, `pincode`, `address`) VALUES ('$ownerid', '$gstin', '$sname', '$state', '$city', '$pincode', '$locality')  ";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($res);
+  if ($result) {
+    echo "success";
   } else {
-    $acc_type = "1102";
-  }
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-  $cpassword = $_POST["cpassword"];
-  $exists = false;
-  $check_user = mysqli_query($conn, "SELECT user_name FROM user where user_name = '$username' ");
-  if (mysqli_num_rows($check_user) > 0) {
-    echo ('username Already exists');
-  } else {
-    if (($password == $cpassword) && $exists == false) {
-      $sql = "INSERT INTO `users` (`user_name`, `email`, `name`, `password`, `cpassword`, `acc_type`, `time`) VALUES ('$username', '$email', '$name', '$password', '$cpassword', '$acc_type', current_timestamp())  ";
-      $result = mysqli_query($conn, $sql);
-      $row = mysqli_fetch_assoc($res);
-      if ($result) {
-        if ($row['acc_type'] == 1101)
-
-          echo "success";
-      } else {
-        echo "failed";
-      }
-    }
+    echo "failed";
   }
 }
-
-
-
 
 ?>
 
@@ -67,53 +51,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <h2>Create your Shop</h2>
               <div class="txt_field mb-3">
                 <label for="exampleInputEmail1" class="form-label">Shop Name</label>
-                <input type="text" name="name" placeholder="Shop Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                <input type="text" name="sname" placeholder="Shop Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
               </div>
               <div class="txt_field mb-3">
                 <label for="exampleInputEmail1" class="form-label">GSTIN</label>
                 <input type="alphanumeric" name="gstin" placeholder="GSTIN" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
               </div>
-              <!-- <div>
-                <label for="exampleInputEmail1" class="form-label">Account Type</label>
-              </div>
-              <div class="form-check-inline">
-
-                <input class="form-check-input" type="radio" name="radio" value="1101" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Seller
-                </label>
-              </div>
-              <div class="form-check-inline">
-                <input class="form-check-input" type="radio" name="radio" value="1102" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Customer
-                </label>
-              </div>
-
-              <div class=" txt_field mb-3 mt-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="text" placeholder="Email address" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div>
-              <div class=" txt_field mb-3 mt-3">
-                <label for="exampleInputEmail1" class="form-label">UserName</label>
-                <input type="text" placeholder="User Name" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div class="txt_field mb-3">
+                <label for="exampleInputEmail1" class="form-label">Locality</label>
+                <input type="text" name="locality" placeholder="Locality" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
               </div>
               <div class="txt_field mb-3">
-                <label for="exampleInputPassword1" class="form-label"> Create a password (min 6 characters)</label>
-                <input type="password" placeholder="Password" name="password" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputEmail1" class="form-label">State</label>
+                <input type="text" name="state" placeholder="State" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
               </div>
-              <div class=" txt_field mb-3">
-                <label for="exampleInputPassword1" class="form-label"> Confirm password</label>
-                <input type="password" placeholder="Confirm Password" name="cpassword" class="form-control" id="exampleInputPassword2">
-              </div> -->
+              <div class="txt_field mb-3">
+                <label for="exampleInputEmail1" class="form-label">City</label>
+                <input type="text" name="city" placeholder="City" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+              </div>
+              <div class="txt_field mb-3">
+                <label for="exampleInputEmail1" class="form-label">Pincode</label>
+                <input type="numeric" name="pincode" placeholder="Pincode" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+              </div>
 
-              <button type="submit" class="btn"> SignUp</button>
+              <button type="submit" class="btn"> Create</button>
             </form>
-            <div class="sign mt-4">
-              <a class="sign" href="../login/login.php">
-                <h6>Already have an account?</h6>
-              </a>
-            </div>
           </div>
         </div>
       </div>

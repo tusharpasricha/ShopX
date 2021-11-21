@@ -14,24 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST["password"];
   $cpassword = $_POST["cpassword"];
   $exists = false;
-  $check_user = mysqli_query($conn, "SELECT user_name FROM user where user_name = '$username' ");
-  if (!$check_user) {
-    die("SQL query failed: " . mysqli_error($conn));
-  }
-  if (mysqli_num_rows($check_user) > 0) {
-    echo ('username Already exists');
-  } else {
-    if (($password == $cpassword) && $exists == false) {
-      $sql = "INSERT INTO `users` (`user_name`, `email`, `name`, `password`, `cpassword`, `acc_type`, `time`) VALUES ('$username', '$email', '$name', '$password', '$cpassword', '$acc_type', current_timestamp())  ";
-      $result = mysqli_query($conn, $sql);
-      $row = mysqli_fetch_assoc($res);
-      if ($result) {
-        if ($row['acc_type'] == 1101)
-          header('Location:./shopregister.php');
-        echo "success";
-      } else {
-        echo "failed";
-      }
+  if (($password == $cpassword) && $exists == false) {
+    $sql = "INSERT INTO `users` (`user_name`, `email`, `name`, `password`, `cpassword`, `acc_type`, `time`) VALUES ('$username', '$email', '$name', '$password', '$cpassword', '$acc_type', current_timestamp()) ";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    if ($result) {
+      echo "success";
+      if ($row['acc_type'] == 1101)
+        header('Location:./shopregister.php user=' . $username);
+    } else {
+      echo "failed";
     }
   }
 }
