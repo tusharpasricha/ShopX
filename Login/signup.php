@@ -3,7 +3,6 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $err = false;
   include './db_connect.php';
-  session_start();
 
   $name = $_POST["name"];
   $email = $_POST["email"];
@@ -15,26 +14,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
   $cpassword = $_POST["cpassword"];
-  $exists = false;
-  if (($password == $cpassword) && $exists == false) {
+  if (($password == $cpassword)) {
     $sql = "INSERT INTO `users` (`user_name`, `email`, `name`, `password`, `cpassword`, `acc_type`, `time`) VALUES ('$username', '$email', '$name', '$password', '$cpassword', '$acc_type', current_timestamp()) ";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    if ($result) {
-      echo "success";
-      header('Location:./login.php');
-      if ($row['acc_type'] == 1101)
-        header('Location:./shopregister.php');
-      else if ($row['acc_type'] == 1102)
-        header("Location:../customer.php");
+    $res = mysqli_query($conn, $sql);
+    $sql1 = "SELECT * from users where user_name ='$username'and cpassword ='$password' ";
+    $res1 = mysqli_query($conn, $sql1);
+    $num = mysqli_num_rows($res1);
+    $row = mysqli_fetch_assoc($res1);
+    if ($num <= 0) {
+      echo "something went wrong";
     } else {
-      echo "failed";
+      if ($row['acc_type'] == 1101) {
+        echo " login success" . $row['user_id'];
+        header("Location:./shopregister.php");
+      } else if ($row['acc_type'] == 1102) {
+        echo " login success" . $row['user_id'];
+        header("Location:../customer.php");
+      }
     }
   }
 }
-
-
-
 
 ?>
 
@@ -67,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <h2>SignUp</h2>
               <div class="txt_field mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" name="name" placeholder="Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                <input type="text" name="name" placeholder="Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" required minlength="3">
               </div>
               <div>
                 <label for="exampleInputEmail1" class="form-label">Account Type</label>
@@ -88,19 +87,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
               <div class=" txt_field mb-3 mt-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="text" placeholder="Email address" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" placeholder="Email address" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
               </div>
               <div class=" txt_field mb-3 mt-3">
                 <label for="exampleInputEmail1" class="form-label">UserName</label>
-                <input type="text" placeholder="User Name" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" placeholder="User Name" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required minlength="4">
               </div>
               <div class="txt_field mb-3">
-                <label for="exampleInputPassword1" class="form-label"> Create a password (min 6 characters)</label>
-                <input type="password" placeholder="Password" name="password" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label"> Create a password (min 8 characters)</label>
+                <input type="password" placeholder="Password" name="password" class="form-control" id="exampleInputPassword1" required minlength="8">
               </div>
               <div class=" txt_field mb-3">
                 <label for="exampleInputPassword1" class="form-label"> Confirm password</label>
-                <input type="password" placeholder="Confirm Password" name="cpassword" class="form-control" id="exampleInputPassword2">
+                <input type="password" placeholder="Confirm Password" name="cpassword" class="form-control" id="exampleInputPassword2" required>
               </div>
 
               <button type="submit" class="btn"> SignUp</button>

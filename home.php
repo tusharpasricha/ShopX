@@ -21,7 +21,7 @@
                 <h3>Shopping Made Easy</h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente omnis sequi aliquam molestias quas
                     fugiat hic explicabo incidunt asperiores odio?</p>
-                <button class="btn"> <a href="./login.html">Sign In</a> </button>
+                <a href="./login/login.php"><button class="btn">Enter</button></a>
             </div>
             <div class="cont2">
                 <img src="img/landin page vector.png" alt="" width="660px" height="630px">

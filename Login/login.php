@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $num = mysqli_num_rows($res);
   $row = mysqli_fetch_assoc($res);
   if ($num <= 0) {
-    echo "failed login";
+    echo "invalid credentials";
   } else {
     if ($row['acc_type'] == 1101) {
       echo " login success" . $row['user_id'];
@@ -61,13 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class=" txt_field mt-4 mb-3">
                 <span></span>
                 <label for="exampleInputEmail1 ">User Name</label>
-                <input type="text" placeholder="Username" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" placeholder="Username" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
 
               </div>
               <div class=" txt_field mb-3">
                 <span></span>
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" placeholder="Password" name="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" placeholder="Password" name="password" class="form-control" id="exampleInputPassword1" required>
               </div>
 
               <button type="submit" class="btn ">Sign In</button>
