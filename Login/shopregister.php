@@ -3,16 +3,17 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $err = false;
   include './db_connect.php';
+  session_start();
   $sname = $_POST["sname"];
   $gstin = $_POST["gstin"];
   $locality = $_POST["locality"];
   $state = $_POST["state"];
   $city = $_POST["city"];
   $pincode = $_POST["pincode"];
-  $ownerid = $_GET['user'];
+  $ownerid = $_SESSION['username'];
   $sql = "INSERT INTO `shop` (`owner_id`, `gst_in`, `shop_name`, `state`, `city`, `pincode`, `address`) VALUES ('$ownerid', '$gstin', '$sname', '$state', '$city', '$pincode', '$locality')  ";
   $result = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_assoc($res);
+  $row = mysqli_fetch_assoc($result);
   if ($result) {
     echo "success";
   } else {

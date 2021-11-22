@@ -3,9 +3,11 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   include './db_connect.php';
 
+  session_start();
   $username = $_POST["username"];
   $password = $_POST["password"];
-
+  $_SESSION['username'] = $username;
+  $_SESSION['password'] = $password;
   $sql = "SELECT * from users where user_name ='$username'and cpassword ='$password' ";
   $res = mysqli_query($conn, $sql);
   if (!$res) {

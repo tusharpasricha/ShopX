@@ -3,6 +3,8 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $err = false;
   include './db_connect.php';
+  session_start();
+
   $name = $_POST["name"];
   $email = $_POST["email"];
   if (isset($_POST['radio'])) {
@@ -20,8 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = mysqli_fetch_assoc($result);
     if ($result) {
       echo "success";
+      header('Location:./login.php');
       if ($row['acc_type'] == 1101)
-        header('Location:./shopregister.php user=' . $username);
+        header('Location:./shopregister.php');
+      else if ($row['acc_type'] == 1102)
+        header("Location:../customer.php");
     } else {
       echo "failed";
     }
