@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $err = false;
   include './db_connect.php';
 
+  session_start();
   $name = $_POST["name"];
   $email = $_POST["email"];
   if (isset($_POST['radio'])) {
@@ -14,24 +15,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
   $cpassword = $_POST["cpassword"];
-  if (($password == $cpassword)) {
-    $sql = "INSERT INTO `users` (`user_name`, `email`, `name`, `password`, `cpassword`, `acc_type`, `time`) VALUES ('$username', '$email', '$name', '$password', '$cpassword', '$acc_type', current_timestamp()) ";
-    $res = mysqli_query($conn, $sql);
-    $sql1 = "SELECT * from users where user_name ='$username'and cpassword ='$password' ";
-    $res1 = mysqli_query($conn, $sql1);
-    $num = mysqli_num_rows($res1);
-    $row = mysqli_fetch_assoc($res1);
-    if ($num <= 0) {
-      echo "something went wrong";
-    } else {
-      if ($row['acc_type'] == 1101) {
-        echo " login success" . $row['user_id'];
-        header("Location:./shopregister.php");
-      } else if ($row['acc_type'] == 1102) {
-        echo " login success" . $row['user_id'];
-        header("Location:../customer.php");
+
+  $_SESSION['username'] = $username;
+
+  $sql2 = "SELECT * from users WHERE user_name = '$username' OR email = '$email'";
+  $res2 = mysqli_query($conn, $sql2);
+  $num2 = mysqli_num_rows($res2);
+  if ($num2 <= 0) {
+    if (($password == $cpassword)) {
+      $sql = "INSERT INTO `users` (`user_name`, `email`, `name`, `password`, `cpassword`, `acc_type`, `time`) VALUES ('$username', '$email', '$name', '$password', '$cpassword', '$acc_type', current_timestamp()) ";
+      $res = mysqli_query($conn, $sql);
+      $sql1 = "SELECT * from users where user_name ='$username'and cpassword ='$password' ";
+      $res1 = mysqli_query($conn, $sql1);
+      $num = mysqli_num_rows($res1);
+      $row = mysqli_fetch_assoc($res1);
+      if ($num <= 0) {
+        echo "something went wrong";
+      } else {
+        if ($row['acc_type'] == 1101) {
+          echo " login success" . $row['user_id'];
+          header("Location:./shopregister.php");
+        } else if ($row['acc_type'] == 1102) {
+          echo " login success" . $row['user_id'];
+          header("Location:../customer.php");
+        }
       }
     }
+  } else {
+    echo "username already taken";
   }
 }
 

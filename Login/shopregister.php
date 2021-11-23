@@ -3,23 +3,24 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $err = false;
   include './db_connect.php';
+  session_start();
   $sname = $_POST["sname"];
   $gstin = $_POST["gstin"];
   $locality = $_POST["locality"];
   $state = $_POST["state"];
   $city = $_POST["city"];
   $pincode = $_POST["pincode"];
-  $ownerid = $_GET['username'];
-  $sql = "INSERT INTO `shop` (`owner_id`, `gst_in`, `shop_name`, `state`, `city`, `pincode`, `address`) VALUES ('$ownerid', '$gstin', '$sname', '$state', '$city', '$pincode', '$locality')  ";
-  $result = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_assoc($result);
-  if ($result) {
+  $ownerid = $_SESSION['username'];
+  $sql = "INSERT INTO shop (`owner_id`, `gst_in`, `shop_name`, `state`, `city`, `pincode`, `address`) VALUES ('$ownerid', $gstin', '$sname', '$state', '$city', '$pincode', '$locality')";
+  $sql1 = "SELECT * shop WHERE gst_in ='$gstin'";
+  $result = mysqli_query($conn, $sql1);
+  $row = mysqli_num_rows($result);
+  if ($row) {
     echo "success";
   } else {
     echo "failed";
   }
 }
-
 ?>
 
 
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="cont3">
         <div class="signup">
           <div class="box2">
-            <form action="../login/signup.php" method="post" id="loginForm">
+            <form action="../login/shopregister.php" method="post" id="loginForm">
               <h2>Create your Shop</h2>
               <div class="txt_field mb-3">
                 <label for="exampleInputEmail1" class="form-label">Shop Name</label>
