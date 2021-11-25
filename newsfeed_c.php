@@ -30,7 +30,7 @@
                 <div class="toogle__items">
                     <ul class="links">
                         <li>
-                            <a href="customerView.html">home</a>
+                            <a href="customer.php">home</a>
                         </li>
                         <li>
                             <a href="newsfeed.html">News Feed</a>
