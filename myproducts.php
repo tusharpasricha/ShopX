@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,72 +46,33 @@
         <div class="box2">
             <h4>PRODUCTS</h4>
         </div>
-        <div class="block">
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
 
-                    <button class="enter">View Product</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
-                </div>
-            </div>
+        <div class="block" style="align-items: center ">
+        <?php 
+    include './login/db_connect.php';
+    session_start();
 
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
+    $sql = "SELECT * FROM `products` ";
+      $res = mysqli_query($conn, $sql);
+      $num = mysqli_num_rows($res);
+      
+      if ($num <= 0) {
+        echo "something went wrong";
+      } 
+    while($row = mysqli_fetch_assoc($res)){
+?>
+               <div class="card" >
+                <img src="<?php echo "upload/".$row['image']; ?>" alt=" item" style="width:90%" height="60%" style="align-items: center">
                 <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
+                    <h6><b><?php echo $row['product_title'] ;  ?></b></h6>
                     <button class="enter">View Product</button>
                 </div>
             </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
-                </div>
-            </div>
+            <?php
+            }
+        
+            ?>
+            
         </div>
 
 </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2021 at 09:03 PM
+-- Generation Time: Nov 26, 2021 at 05:22 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -94,22 +94,6 @@ CREATE TABLE `products` (
   `image` varchar(2000) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`product_id`, `product_desc`, `tax_code`, `product_title`, `price`, `status`, `image`, `timestamp`) VALUES
-(110014, 'vred', 55, 'cvfed', 0, 1, 's-1637954938.s', '2021-11-26 19:28:58'),
-(110015, 'vred', 55, 'cvfed', 0, 1, 's-1637955005.s', '2021-11-26 19:30:05'),
-(110016, 'vred', 55, 'cvfed', 0, 1, 's-1637955057.s', '2021-11-26 19:30:57'),
-(110017, 'vred', 55, 'cvfed', 0, 1, 's-1637955181.s', '2021-11-26 19:33:01'),
-(110018, 'vred', 55, 'cvfed', 0, 1, 's-1637955527.s', '2021-11-26 19:38:47'),
-(110019, 'vred', 55, 'cvfed', 0, 1, 's-1637955750.s', '2021-11-26 19:42:30'),
-(110020, 'vred', 55, 'cvfed', 0, 1, 's-1637956196.s', '2021-11-26 19:49:56'),
-(110021, 'vred', 55, 'cvfed', 0, 1, 's-.s', '2021-11-26 19:55:31'),
-(110022, 'vred', 55, 'cvfed', 0, 1, 's-abcd.s', '2021-11-26 19:55:43'),
-(110023, 'vred', 55, 'cvfed', 0, 1, 's-1637956669.s', '2021-11-26 19:57:49');
 
 -- --------------------------------------------------------
 
@@ -231,7 +215,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110024;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110012;
 
 --
 -- AUTO_INCREMENT for table `shop`

@@ -1,7 +1,3 @@
-<?php
-include './add_prod.php';
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -200,7 +196,7 @@ include './add_prod.php';
         <div class="box2">
             <h4>ADD PRODUCTS</h4>
         </div>
-        <form action="./add_prod.php" method="post">
+        <form action="./add_prod.php" method="post"  enctype="multipart/form-data">
             <div class="addproduct">
                 <div class="vector">
                     <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
@@ -226,7 +222,7 @@ include './add_prod.php';
                         <input class="form-control" type="number" name="price" placeholder="Price" required>
                         <br>
                     </div>
-                    <div class="txtfield">
+                    <div class="txtfield"> 
                         <div class="txtfield">
                             <!-- <label>Price</label> -->
                             <input class="form-control" type="number" name="prod_tax" placeholder="Tax Slab (%)" required>
@@ -234,7 +230,7 @@ include './add_prod.php';
                         </div>
                         <div class="txtfield">
 
-                            <input type="file" id="image-input" accept="image/*" required>
+                            <input type="file" id="image"  name="image" accept="image/*" required>
                             <!-- <input class="form-control"  type="number"> -->
                         </div>
 
