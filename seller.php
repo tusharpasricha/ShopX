@@ -1,3 +1,8 @@
+<?php
+include './add_prod.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -176,9 +181,11 @@
                             <a href="./newsfeed_s.php">News feed</a>
                         </li>
                         <li>
-                            <a href="./seller.php">My Products</a>
+                            <a href="./seller.php">Add Products</a>
                         </li>
-
+                        <li>
+                            <a href="./myproducts.php">My Products</a>
+                        </li>
                         <li>
                             <a href="./login/logout.php">Logout</a>
                         </li>
@@ -193,44 +200,52 @@
         <div class="box2">
             <h4>ADD PRODUCTS</h4>
         </div>
-        <div class="addproduct">
-            <div class="vector">
-                <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
-            </div>
-            <div class="productform">
-                <div class="txtfield">
-                    <!-- <label> Product</label> -->
-                    <input class="form-control" type="text" placeholder="Product name" required>
-                    <br>
+        <form action="./add_prod.php" method="post">
+            <div class="addproduct">
+                <div class="vector">
+                    <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
                 </div>
-                <!-- <div class="txtfield">
+                <div class="productform">
+                    <div class="txtfield">
+                        <!-- <label> Product</label> -->
+                        <input class="form-control" type="text" name="prod_name" placeholder="Product name" required>
+                        <br>
+                    </div>
+                    <!-- <div class="txtfield">
                 <label>Image</label>
                 <input class="form-control"  type="image">
                 <br>
                 </div> -->
-                <div class="txtfield">
-                    <!-- <label>Description</label> -->
-                    <input class="form-control" type="text" placeholder="Description" required>
-                    <br>
-                </div>
-                <div class="txtfield">
-                    <!-- <label>Price</label> -->
-                    <input class="form-control" type="number" placeholder="Price" required>
-                    <br>
-                </div>
-                <div class="txtfield">
+                    <div class="txtfield">
+                        <!-- <label>Description</label> -->
+                        <input class="form-control" type="text" name="prod_desc" placeholder="Description" required>
+                        <br>
+                    </div>
+                    <div class="txtfield">
+                        <!-- <label>Price</label> -->
+                        <input class="form-control" type="number" name="price" placeholder="Price" required>
+                        <br>
+                    </div>
+                    <div class="txtfield">
+                        <div class="txtfield">
+                            <!-- <label>Price</label> -->
+                            <input class="form-control" type="number" name="prod_tax" placeholder="Tax Slab (%)" required>
+                            <br>
+                        </div>
+                        <div class="txtfield">
 
-                    <input type="file" id="image-input" accept="image/*" required>
-                    <!-- <input class="form-control"  type="number"> -->
+                            <input type="file" id="image-input" accept="image/*" required>
+                            <!-- <input class="form-control"  type="number"> -->
+                        </div>
+
+                        <button class="btn">Add</button>
+                    </div>
                 </div>
 
-                <button class="btn">Add</button>
+
             </div>
-        </div>
-        <!-- <div class="bar">
-            <h4>My Products</h4>
-        </div>
-
+        </form>
+        <!--
         <div class="block">
             <div class="card">
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">

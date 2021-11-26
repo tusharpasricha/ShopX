@@ -27,14 +27,16 @@
                 <div class="toogle__items">
                     <ul class="links">
                         <li>
-                            <a href="newsfeed_s.php">News feed</a>
+                            <a href="./newsfeed_s.php">News feed</a>
                         </li>
                         <li>
-                            <a href="seller.php">My products</a>
+                            <a href="./seller.php">Add Products</a>
                         </li>
-
                         <li>
-                            <a href="./Login/logout.php">Logout</a>
+                            <a href="./myproducts.php">My Products</a>
+                        </li>
+                        <li>
+                            <a href="./login/logout.php">Logout</a>
                         </li>
                     </ul>
                     <div class="profile">
