@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,140 +15,7 @@
 
 </head>
 
-<body class="active">
-    <div class="wrapper">
-        <div class="section">
-            <div class="top_navbar">
-                <div class="hamburger">
-                    <a href="#">
 
-                        <i class="fas fa-bars"></i>
-                        Profile
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="sidebar">
-            <div class="profile">
-                <img src="./img/profile.jfif" alt="profile_picture">
-                <h6>Classic Fashion Store</h6>
-                <!-- <p>Classic Fashion Store</p> -->
-            </div>
-            <div class="addpost">
-                <div class="postform">
-                    <div>
-                        <label style="color: #adadad; padding-left: 10px;">Image</label>
-                    </div>
-
-                    <div class="txtfield">
-                        <input type="file" id="image-input" accept="image/*">
-                        <!-- <input class="form-control"  type="number"> -->
-                    </div>
-                    <br>
-                    <div class="txtfield">
-                        <label>Caption</label>
-                        <input class="form-control" type="text">
-                    </div>
-                    <br>
-                </div>
-                <button class="btn">Post</button>
-            </div>
-            <div class="postbox">
-                <div class="post">
-                    <img src="" alt="post" style="width:80%" style="align-items: center;">
-                    <div class="caption">
-                        <h6><b>Classic Fashion Store</b></h6>
-                    </div>
-                </div>
-                <div class="post">
-                    <img src="" alt="shoe" style="width:80%" style="align-items: center;">
-                    <div class="caption">
-                        <h6><b>Classic Fashion Store</b></h6>
-                    </div>
-                </div>
-                <div class="post">
-                    <img src="" alt="shoe" style="width:80%" style="align-items: center;">
-                    <div class="caption">
-                        <h6><b>Classic Fashion Store</b></h6>
-                    </div>
-                </div>
-                <div class="post">
-                    <img src="" alt="shoe" style="width:80%" style="align-items: center;">
-                    <div class="caption">
-                        <h6><b>Classic Fashion Store</b></h6>
-                    </div>
-                </div>
-                <div class="post">
-                    <img src="" alt="shoe" style="width:80%" style="align-items: center;">
-                    <div class="caption">
-                        <h6><b>Classic Fashion Store</b></h6>
-                    </div>
-                </div>
-                <div class="post">
-                    <img src="" alt="shoe" style="width:80%" style="align-items: center;">
-                    <div class="caption">
-                        <h6><b>Classic Fashion Store</b></h6>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- <div>
-            <ul>
-                <li>
-                    <a href="#" class="active">
-                        <span class="icon"><i class="fas fa-home"></i></span>
-                        <span class="item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-desktop"></i></span>
-                        <span class="item">My Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-user-friends"></i></span>
-                        <span class="item">People</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                        <span class="item">Perfomance</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-database"></i></span>
-                        <span class="item">Development</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-chart-line"></i></span>
-                        <span class="item">Reports</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-user-shield"></i></span>
-                        <span class="item">Admin</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-cog"></i></span>
-                        <span class="item">Settings</span>
-                    </a>
-                </li>
-            </ul>
-        </div> -->
-        </div>
-
-
-</body>
 <script>
     var hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click",
@@ -196,7 +62,7 @@
         <div class="box2">
             <h4>ADD PRODUCTS</h4>
         </div>
-        <form action="./add_prod.php" method="post"  enctype="multipart/form-data">
+        <form action="./add_prod.php" method="post" enctype="multipart/form-data">
             <div class="addproduct">
                 <div class="vector">
                     <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
@@ -222,26 +88,20 @@
                         <input class="form-control" type="number" name="price" placeholder="Price" required>
                         <br>
                     </div>
-                    <div class="txtfield"> 
-                        <div class="txtfield">
-                            <!-- <label>Price</label> -->
-                            <input class="form-control" type="number" name="prod_tax" placeholder="Tax Slab (%)" required>
-                            <br>
-                        </div>
-                        <div class="txtfield">
+                    <div class="txtfield">
 
-                            <input type="file" id="image"  name="image" accept="image/*" required>
-                            <!-- <input class="form-control"  type="number"> -->
-                        </div>
-
-                        <button class="btn">Add</button>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                        <!-- <input class="form-control"  type="number"> -->
                     </div>
+
+                    <button class="btn">Add</button>
                 </div>
-
-
             </div>
-        </form>
-        <!--
+
+
+    </div>
+    </form>
+    <!--
         <div class="block">
             <div class="card">
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">

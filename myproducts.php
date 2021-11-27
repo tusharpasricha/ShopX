@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,32 +47,40 @@
         </div>
 
         <div class="block" style="align-items: center ">
-        <?php 
-    include './login/db_connect.php';
-    session_start();
+            <?php
+            include './login/db_connect.php';
+            session_start();
+            $sidd = $_SESSION['sid'];
 
-    $sql = "SELECT * FROM `products` ";
-      $res = mysqli_query($conn, $sql);
-      $num = mysqli_num_rows($res);
-      
-      if ($num <= 0) {
-        echo "something went wrong";
-      } 
-    while($row = mysqli_fetch_assoc($res)){
-?>
-               <div class="card" >
-                <img src="<?php echo "upload/".$row['image']; ?>" alt=" item" style="width:90%" height="60%" style="align-items: center">
-                <div class="container">
-                    <h6><b><?php echo $row['product_title'] ;  ?></b></h6>
-                    <button class="enter">View Product</button>
+            $sql = "SELECT * FROM `products` where shop_id='$sidd'";
+            $res = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($res);
+
+            if ($num <= 0) {
+                echo "no product";
+            }
+            while ($row = mysqli_fetch_assoc($res)) {
+            ?>
+                <div class="card">
+                    <img src="<?php echo "upload/" . $row['image']; ?>" alt=" item" style="width:90%" height="60%" style="align-items: center">
+                    <div class="container">
+                        <h6><b><?php echo $row['product_title'];  ?></b></h6>
+                        <button class="enter">View Product</button>
+                    </div>
                 </div>
-            </div>
             <?php
             }
-        
+
             ?>
-            
-        </div>
+            <div class="card">
+                <br><br>
+                <img src="./img/add.png" alt=" item" style="width:40%" height="40%" style="align-items: center">
+                <div class="container">
+                    <br>
+                    <a href="seller.php"><button class="enter">Add Product</button></a>
+                </div>
+
+            </div>
 
 </body>
 

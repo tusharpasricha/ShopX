@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2021 at 09:03 PM
+-- Generation Time: Nov 27, 2021 at 03:22 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -86,8 +86,8 @@ CREATE TABLE `posts` (
 
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
+  `shop_id` int(15) NOT NULL,
   `product_desc` varchar(2000) NOT NULL,
-  `tax_code` int(11) NOT NULL,
   `product_title` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `status` int(11) NOT NULL,
@@ -99,17 +99,18 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_desc`, `tax_code`, `product_title`, `price`, `status`, `image`, `timestamp`) VALUES
-(110014, 'vred', 55, 'cvfed', 0, 1, 's-1637954938.s', '2021-11-26 19:28:58'),
-(110015, 'vred', 55, 'cvfed', 0, 1, 's-1637955005.s', '2021-11-26 19:30:05'),
-(110016, 'vred', 55, 'cvfed', 0, 1, 's-1637955057.s', '2021-11-26 19:30:57'),
-(110017, 'vred', 55, 'cvfed', 0, 1, 's-1637955181.s', '2021-11-26 19:33:01'),
-(110018, 'vred', 55, 'cvfed', 0, 1, 's-1637955527.s', '2021-11-26 19:38:47'),
-(110019, 'vred', 55, 'cvfed', 0, 1, 's-1637955750.s', '2021-11-26 19:42:30'),
-(110020, 'vred', 55, 'cvfed', 0, 1, 's-1637956196.s', '2021-11-26 19:49:56'),
-(110021, 'vred', 55, 'cvfed', 0, 1, 's-.s', '2021-11-26 19:55:31'),
-(110022, 'vred', 55, 'cvfed', 0, 1, 's-abcd.s', '2021-11-26 19:55:43'),
-(110023, 'vred', 55, 'cvfed', 0, 1, 's-1637956669.s', '2021-11-26 19:57:49');
+INSERT INTO `products` (`product_id`, `shop_id`, `product_desc`, `product_title`, `price`, `status`, `image`, `timestamp`) VALUES
+(110014, 1103, 'ewdwrvgerb', 'abxcd', 599, 1, 'p-1638019378.p', '2021-11-27 13:22:58'),
+(110015, 1103, 'naman', 'naman', 58, 1, 's-1638019378.s', '2021-11-27 13:22:58'),
+(110016, 0, 'naman', 'naman', 58, 1, 's-1638019436.s', '2021-11-27 13:23:56'),
+(110017, 1103, 'naman', 'naman', 58, 1, 's-1638019562.s', '2021-11-27 13:26:02'),
+(110018, 1103, 'ewdwrvgerb', 'abxcd', 599, 1, 'p-1638019563.p', '2021-11-27 13:26:03'),
+(110019, 1103, 'ewdwrvgerb', 'abxcd', 599, 1, 'p-1638020108.p', '2021-11-27 13:35:08'),
+(110020, 1103, 'ewdwrvgerb', 'abxcd', 599, 1, 'd-1638020532.d', '2021-11-27 13:42:12'),
+(110021, 1106, 'ewdwrvgerb', 'fwfr', 649, 1, 'u-1638020801.u', '2021-11-27 13:46:41'),
+(110022, 1106, 'ewdwrvgerb', 'ebtt4h', 699, 1, 't-1638020838.t', '2021-11-27 13:47:18'),
+(110023, 1107, 'ewdwrvgerb', 'fwfr', 999, 1, 'i-1638021178.i', '2021-11-27 13:52:58'),
+(110024, 1108, 'ewdwrvgerb', 'abxcd', 599, 1, 'w-1638022074.w', '2021-11-27 14:07:54');
 
 -- --------------------------------------------------------
 
@@ -135,7 +136,9 @@ CREATE TABLE `shop` (
 INSERT INTO `shop` (`shop_id`, `owner_id`, `gst_in`, `shop_name`, `state`, `city`, `pincode`, `address`) VALUES
 (1103, 'abcd', '123bhg34', 'fashion store', 'Delhi', 'New delhi', 110007, 'abcd'),
 (1104, 'wxyz', '123bhg343e', 'c fashion store', 'Delhi', 'New delhi', 110007, 'cwfdqf'),
-(1105, 'wxyz', '123bhg343e', 'c fashion store', 'Delhi', 'New delhi', 110007, 'cwfdqf');
+(1106, 'tushar', '165165verv', 'tushar traders', 'Uttar Pradesh', 'Meerut', 250404, 'abcd'),
+(1107, 'cdjwnjevbw', '123bhg34', 'fashion store', 'Delhi', 'New delhi', 110007, 'abcd'),
+(1108, 'sarthak', '123bhg34', 'fashion store', 'Delhi', 'New delhi', 110007, 'abcd');
 
 -- --------------------------------------------------------
 
@@ -162,6 +165,7 @@ INSERT INTO `users` (`user_id`, `user_name`, `email`, `name`, `password`, `cpass
 (1239, 'abcd', 'abcd@gmail.com', 'abcd', '12345678', '12345678', 1101, '2021-11-26 14:02:25'),
 (6, 'akshat11', 'akshat@gmail.com', 'akshat', 'akshat', 'akshat', 1101, '2021-11-07 14:04:55'),
 (1200, 'bhavey', 'bhavey@gmail.com', 'bhavey', 'bhavey', 'bhavey', 1102, '2021-11-21 08:49:49'),
+(1242, 'cdjwnjevbw', 'acbj@gmail.com', 'bihwebciw', '12345678', '12345678', 1101, '2021-11-27 13:52:05'),
 (5, 'naman', 'namangupta@gmail.com', 'namangupta28', 'naman', 'naman', 1102, '2021-11-07 13:56:21'),
 (4, 'naman111', 'namangupta990@gmail.com', 'NAMAN', 'nnnn', 'nnnn', 1101, '2021-11-07 13:29:55'),
 (9, 'nnnn', 'nnn@gmail.com', 'NAMAN', 'nnnnn', 'nnnnn', 1101, '2021-11-19 08:13:07'),
@@ -169,6 +173,7 @@ INSERT INTO `users` (`user_id`, `user_name`, `email`, `name`, `password`, `cpass
 (1233, 'qazxsw', 'qazxsw@gmail.com', 'qazxsw', '12345678', '12345678', 1101, '2021-11-23 09:14:40'),
 (1230, 'qwerty', '12@gmail.com', 'qwerty', '12345678', '12345678', 1101, '2021-11-23 08:56:34'),
 (1229, 'sarthak', 'sarthak@gmail.com', 'sarthak', '12345678', '12345678', 1101, '2021-11-23 08:37:34'),
+(1241, 'tushar', 'tushar@gmail.com', 'Tushar', '12345678', '12345678', 1101, '2021-11-27 13:43:47'),
 (1232, 'vbnm', 'vnmb@gmail.com', 'vbnm', '12345678', '12345678', 1101, '2021-11-23 09:04:07'),
 (1240, 'wxyz', 'wxyz@gmail.com', 'xyz', '12345678', '12345678', 1101, '2021-11-26 15:27:50');
 
@@ -231,19 +236,19 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110024;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110025;
 
 --
 -- AUTO_INCREMENT for table `shop`
 --
 ALTER TABLE `shop`
-  MODIFY `shop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1106;
+  MODIFY `shop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1109;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1241;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1243;
 
 --
 -- Constraints for dumped tables

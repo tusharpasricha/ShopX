@@ -20,14 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "invalid credentials";
    } else {
       if ($row['acc_type'] == 1101) {
-         echo " login success" . $row['user_id'];
          $_SESSION['loggedin'] = true;
          $SESSION['acc_type'] = $acc_type;
-         header("Location:../newsfeed_s.php");
+         $sql1 = "SELECT * from shop where owner_id='$username'";
+         $check = mysqli_query($conn, $sql1);
+         $fetchshop = mysqli_fetch_assoc($check);
+         if (!$fetchshop['shop_id']) {
+            header("Location:./shopregister.php");
+         } else {
+            header("Location:../newsfeed_s.php");
+         }
       } else if ($row['acc_type'] == 1102) {
          $_SESSION['loggedin'] = true;
          $SESSION['acc_type'] = $acc_type;
-         echo " login success" . $row['user_id'];
          header("Location:../customer.php");
       }
    }
