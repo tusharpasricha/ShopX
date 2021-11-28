@@ -15,7 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $query = "INSERT INTO `shop` (`owner_id`, `gst_in`, `shop_name`, `state`, `city`, `pincode`, `address`) VALUES ('$owner_id', '$gstin', '$sname', '$state', '$city', '$pincode', '$locality')";
    $result = mysqli_query($conn, $query);
    if ($result) {
-      echo "success";
+      $sql1 = "SELECT * from shop where owner_id = '$owner_id'";
+      $query = mysqli_query($conn, $sql1);
+      $data = mysqli_fetch_assoc($query);
+      $shopid = $data['shop_id'];
+      $_SESSION['shopid'] = $shopid;
       header("Location:../seller.php");
    } else {
       echo  mysqli_error($conn);

@@ -8,6 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $password = $_POST["password"];
    $_SESSION['username'] = $username;
 
+   $sql2 = "SELECT * from shop where owner_id = '$username' ";
+   $query = mysqli_query($conn, $sql2);
+   $data = mysqli_fetch_assoc($query);
+   $shopid = $data['shop_id'];
+   $_SESSION['shopid'] = $shopid;
+
    $sql = "SELECT * from users where user_name ='$username'and cpassword ='$password' ";
    $res = mysqli_query($conn, $sql);
 

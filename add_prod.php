@@ -20,13 +20,8 @@ if (!file_exists($output_dir)) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   include './login/db_connect.php';
   session_start();
-  $user = $_SESSION['username'];
-  $sql1 = "SELECT * from shop where owner_id = '$user' ";
-  $query = mysqli_query($conn, $sql1);
-  $data = mysqli_fetch_assoc($query);
-  $shopid = $data['shop_id'];
-  $_SESSION['sid'] = $shopid;
 
+  $shopid = $_SESSION['shopid'];
   $prod_name = $_POST['prod_name'];
   $prod_desc = $_POST['prod_desc'];
   $prod_price = $_POST['price'];
@@ -36,6 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!$res) {
     die("SQL query failed: " . mysqli_error($conn));
   } else {
-    echo "created product";
+    header("Location:./myproducts.php");
   }
 }

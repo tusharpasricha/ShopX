@@ -1,3 +1,7 @@
+<?php
+require('./login/db_connect.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +31,7 @@
 </script>
 
 <body>
+    <br>
 
     <div class="box1">
         <nav>
@@ -43,9 +48,6 @@
                             <a href="./newsfeed_s.php">News feed</a>
                         </li>
                         <li>
-                            <a href="./seller.php">Add Products</a>
-                        </li>
-                        <li>
                             <a href="./myproducts.php">My Products</a>
                         </li>
                         <li>
@@ -53,7 +55,7 @@
                         </li>
                     </ul>
                     <div class="profile">
-                        <p>Classic Fashion Store</p>
+                        <p><?php echo $_SESSION['username']; ?></p>
 
                     </div>
                 </div>

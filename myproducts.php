@@ -1,3 +1,7 @@
+<?php
+require('./login/db_connect.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,18 +31,17 @@
                             <a href="./newsfeed_s.php">News feed</a>
                         </li>
                         <li>
-                            <a href="./seller.php">Add Products</a>
-                        </li>
-                        <li>
                             <a href="./myproducts.php">My Products</a>
                         </li>
                         <li>
                             <a href="./login/logout.php">Logout</a>
                         </li>
                     </ul>
-                    <div class="profile">
-                        <p>Classic Fashion Store</p>
-                    </div>
+                    <a href="./profile.php">
+                        <div class="profile">
+                            <p><?php echo $_SESSION['username']; ?></p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -48,11 +51,11 @@
 
         <div class="block" style="align-items: center ">
             <?php
-            include './login/db_connect.php';
-            session_start();
-            $sidd = $_SESSION['sid'];
+            // include './login/db_connect.php';
+            // session_start();
+            $sid = $_SESSION["shopid"];
 
-            $sql = "SELECT * FROM `products` where shop_id='$sidd'";
+            $sql = "SELECT * FROM `products` where shop_id='$sid'";
             $res = mysqli_query($conn, $sql);
             $num = mysqli_num_rows($res);
 

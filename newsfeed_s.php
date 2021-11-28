@@ -1,3 +1,7 @@
+<?php
+require('./login/db_connect.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,9 +34,6 @@
                             <a href="./newsfeed_s.php">News feed</a>
                         </li>
                         <li>
-                            <a href="./seller.php">Add Products</a>
-                        </li>
-                        <li>
                             <a href="./myproducts.php">My Products</a>
                         </li>
                         <li>
@@ -40,7 +41,7 @@
                         </li>
                     </ul>
                     <div class="profile">
-                        <p>Classic Fashion Store</p>
+                        <p><?php echo $_SESSION['username']; ?></p>
 
                     </div>
                 </div>
@@ -50,7 +51,7 @@
         <div class="box2">
             <h4>NEWS FEED</h4>
         </div>
-        
+
         <div class="newsfeeds">
             <div class="newscard">
                 <h6><b>Classic Fashion Store</b></h6>
