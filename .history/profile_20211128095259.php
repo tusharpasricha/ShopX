@@ -69,11 +69,10 @@
                     <button class="btn">Add</button>
                 </div>
             </div>
+
+
+    
     </form>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="newsfeeds">
             <div class="newscard">
                 <h6><b>Classic Fashion Store</b></h6>

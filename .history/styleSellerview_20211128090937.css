@@ -109,7 +109,7 @@ body{
         border-style: solid;
         border-color: rgba(255, 255, 255, 0.883);
         border-width: 6px;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(179, 57, 57);
         margin-top: -200px;
         margin-left: 120px;
         width: 75%;
@@ -545,33 +545,3 @@ body{
         color: rgb(0, 0, 0);
         background-color: rgb(255, 255, 255);   
     }
-    .newsfeeds::-webkit-scrollbar{
-      display: none;
-  }
-    .newsfeeds{
-      margin-left: 160px;
-      margin-top: -200px;
-      background-color: rgb(255, 226, 194);
-      width: 70%;
-      height: 500px;
-      justify-content: center;
-    overflow-y: scroll;
-    display: grid;
-    grid-template-rows: auto auto auto ;
-    border-radius: 55px;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.883);
-    border-width: 6px;
-  }
-  .newscard{
-    box-shadow: 0 4px 8px 0 #f9b185;
-    transition: 0.3s;
-    width: 600px;
-    height: 300px;
-    border-radius: 20px;
-    background-color: #ffd5b5;
-    padding: 33px 10px 10px 33px; 
-    margin-top: 20px;
-    margin-left: 10px;
-    align-items: center;
-  }

@@ -69,22 +69,29 @@
                 </div>
                 <div class="productform">
                     <div class="txtfield">
+                        <!-- <label> Product</label> -->
                         <input class="form-control" type="text" name="prod_name" placeholder="Product name" required>
                         <br>
                     </div>
-                   
+                    <!-- <div class="txtfield">
+                <label>Image</label>
+                <input class="form-control"  type="image">
+                <br>
+                </div> -->
                     <div class="txtfield">
+                        <!-- <label>Description</label> -->
                         <input class="form-control" type="text" name="prod_desc" placeholder="Description" required>
                         <br>
                     </div>
                     <div class="txtfield">
+                        <!-- <label>Price</label> -->
                         <input class="form-control" type="number" name="price" placeholder="Price" required>
                         <br>
                     </div>
                     <div class="txtfield">
 
                         <input type="file" id="image" name="image" accept="image/*" required>
-                        
+                        <!-- <input class="form-control"  type="number"> -->
                     </div>
 
                     <button class="btn">Add</button>

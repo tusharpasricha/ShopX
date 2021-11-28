@@ -52,9 +52,9 @@
         </div>
         <form action="./add_prod.php" method="post" enctype="multipart/form-data">
             <div class="addproduct">
-                <div class="vector">
+                <!-- <div class="vector">
                     <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
-                </div>
+                </div> -->
                 <div class="productform">
                    
                     <div class="txtfield">

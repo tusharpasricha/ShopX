@@ -545,9 +545,6 @@ body{
         color: rgb(0, 0, 0);
         background-color: rgb(255, 255, 255);   
     }
-    .newsfeeds::-webkit-scrollbar{
-      display: none;
-  }
     .newsfeeds{
       margin-left: 160px;
       margin-top: -200px;

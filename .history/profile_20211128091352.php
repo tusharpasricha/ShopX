@@ -7,15 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="styleSellerview.css" />
+    <link rel="stylesheet" href="styleCustomerview.css" />
     <script src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
     <div class="box1">
         <nav>
             <div class="nav-center">
@@ -42,58 +38,87 @@
                     </ul>
                     <div class="profile">
                         <p>Classic Fashion Store</p>
-
                     </div>
                 </div>
             </div>
         </nav>
         <div class="box2">
-            <h4>PROFILE</h4>
+            <h4>PRODUCTS</h4>
         </div>
         <form action="./add_prod.php" method="post" enctype="multipart/form-data">
-            <div class="addproduct">
+        <div class="addproduct">
                 <div class="vector">
                     <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
                 </div>
                 <div class="productform">
+                    <div class="txtfield">
+                        <input class="form-control" type="text" name="prod_name" placeholder="Product name" required>
+                        <br>
+                    </div>
                    
                     <div class="txtfield">
-                        <input type="file" id="image-input" accept="image/*">
+                        <input class="form-control" type="text" name="prod_desc" placeholder="Description" required>
+                        <br>
                     </div>
-                    <br>
                     <div class="txtfield">
-                        <label>Caption</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="number" name="price" placeholder="Price" required>
+                        <br>
                     </div>
-                    <br>
+                    <div class="txtfield">
+
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                        
+                    </div>
+
                     <button class="btn">Add</button>
                 </div>
             </div>
-    </form>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="newsfeeds">
-            <div class="newscard">
-                <h6><b>Classic Fashion Store</b></h6>
-                <img src="./img/product3.jfif" alt="post" width="260px">
-                <div class="Caption">
-                    <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
-                    </p>
-                </div>
-            </div>
-            <div class="newscard">
-                <h6><b>Classic Fashion Store</b></h6>
-                <img src="./img/product3.jfif" alt="post" width="260px">
-                <div class="Caption">
-                    <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
-                    </p>
-                </div>
-            </div>
+
+
     </div>
-    
+        </form>
+        <!-- <div class="postbox">
+            <div class="post">
+                <img src="" alt="post" style="width:80%" style="align-items: center;">
+                <div class="caption">
+                    <h6><b>Classic Fashion Store</b></h6>
+                </div>
+            </div>
+            <div class="post">
+                <img src="" alt="shoe" style="width:80%" style="align-items: center;">
+                <div class="caption">
+                    <h6><b>Classic Fashion Store</b></h6>
+                </div>
+            </div>
+            <div class="post">
+                <img src="" alt="shoe" style="width:80%" style="align-items: center;">
+                <div class="caption">
+                    <h6><b>Classic Fashion Store</b></h6>
+                </div>
+            </div>
+            <div class="post">
+                <img src="" alt="shoe" style="width:80%" style="align-items: center;">
+                <div class="caption">
+                    <h6><b>Classic Fashion Store</b></h6>
+                </div>
+            </div>
+            <div class="post">
+                <img src="" alt="shoe" style="width:80%" style="align-items: center;">
+                <div class="caption">
+                    <h6><b>Classic Fashion Store</b></h6>
+                </div>
+            </div>
+            <div class="post">
+                <img src="" alt="shoe" style="width:80%" style="align-items: center;">
+                <div class="caption">
+                    <h6><b>Classic Fashion Store</b></h6>
+                </div>
+            </div>
         </div>
+ -->
+
+
+
 </body>
 
 </html>

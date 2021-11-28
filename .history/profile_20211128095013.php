@@ -50,7 +50,7 @@
         <div class="box2">
             <h4>PROFILE</h4>
         </div>
-        <form action="./add_prod.php" method="post" enctype="multipart/form-data">
+        <!-- <form action="./add_prod.php" method="post" enctype="multipart/form-data">
             <div class="addproduct">
                 <div class="vector">
                     <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
@@ -69,11 +69,10 @@
                     <button class="btn">Add</button>
                 </div>
             </div>
-    </form>
-    <br>
-    <br>
-    <br>
-    <br>
+
+
+    
+    </form> -->
     <div class="newsfeeds">
             <div class="newscard">
                 <h6><b>Classic Fashion Store</b></h6>
