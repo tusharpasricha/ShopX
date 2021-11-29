@@ -40,10 +40,11 @@ session_start();
                             <a href="./login/logout.php">Logout</a>
                         </li>
                     </ul>
-                    <div class="profile">
-                        <p><?php echo $_SESSION['username']; ?></p>
-
-                    </div>
+                    <a href="./profile.php">
+                        <div class="profile">
+                            <p><?php echo $_SESSION['username']; ?></p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -53,42 +54,33 @@ session_start();
         </div>
 
         <div class="newsfeeds">
-            <div class="newscard">
-                <h6><b>Classic Fashion Store</b></h6>
-                <img src="./img/product3.jfif" alt="post" width="260px">
-                <div class="Caption">
 
-                    <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
-                    </p>
-                </div>
-            </div>
-            <div class="newscard">
-                <h6><b>Classic Fashion Store</b></h6>
-                <img src="./img/product2.jfif" alt="post" width="250px">
-                <div class="Caption">
+            <?php
+            // include './login/db_connect.php';
+            // session_start();
+            $sid = $_SESSION["shopid"];
 
-                    <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
-                    </p>
-                </div>
-            </div>
-            <div class="newscard">
-                <h6><b>Classic Fashion Store</b></h6>
-                <img src="./img/product3.jfif" alt="post" width="260px">
-                <div class="Caption">
+            $sql = "SELECT photo, caption, timestamp FROM `posts` ORDER BY timestamp DESC ";
+            $res = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($res);
 
-                    <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
-                    </p>
+            if ($num <= 0) {
+                echo "no posts";
+            }
+            while ($row = mysqli_fetch_assoc($res)) {
+            ?>
+                <div class="newscard">
+                    <h6><b>Classic Fashion Store</b></h6>
+                    <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" width="260px">
+                    <div class="Caption">
+                        <p><?php echo $row['caption']; ?> </p>
+                    </div>
                 </div>
-            </div>
-            <div class="newscard">
-                <h6><b>Classic Fashion Store</b></h6>
-                <img src="./img/product3.jfif" alt="post" width="260px">
-                <div class="Caption">
+            <?php
+            }
 
-                    <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
-                    </p>
-                </div>
-            </div>
+            ?>
+
         </div>
 </body>
 

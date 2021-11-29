@@ -34,7 +34,7 @@ session_start();
                      <a href="#">home</a>
                   </li>
                   <li>
-                     <a href="newsfeed.php">News Feed</a>
+                     <a href="newsfeed_c.php">News Feed</a>
                   </li>
 
                   <li>

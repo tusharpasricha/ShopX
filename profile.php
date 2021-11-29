@@ -51,7 +51,7 @@ session_start();
         <div class="box2">
             <h4>PROFILE</h4>
         </div>
-        <form action="./add_prod.php" method="post" enctype="multipart/form-data">
+        <form action="./add_post.php" method="post" enctype="multipart/form-data">
             <div class="addproduct">
                 <div class="vector">
                     <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
@@ -59,12 +59,12 @@ session_start();
                 <div class="productform">
                    
                     <div class="txtfield">
-                        <input type="file" id="image-input" accept="image/*">
+                        <input type="file" id="image-input" name="post_image" accept="image/*">
                     </div>
                     <br>
                     <div class="txtfield">
                         <label>Caption</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" name="caption" type="text">
                     </div>
                     <br>
                     <button class="btn">Add</button>
@@ -76,24 +76,32 @@ session_start();
     <br>
     <br>
     <div class="newsfeeds">
-            <div class="newscard">
+
+    <?php
+            // include './login/db_connect.php';
+            // session_start();
+            $sid = $_SESSION["shopid"];
+
+            $sql = "SELECT * FROM `posts` where user_id ='$sid'";
+            $res = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($res);
+
+            if ($num <= 0) {
+                echo "no posts";
+            }
+            while ($row = mysqli_fetch_assoc($res)) {
+            ?>
+                <div class="newscard">
                 <h6><b>Classic Fashion Store</b></h6>
-                <img src="./img/product3.jfif" alt="post" width="260px">
+                <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" width="260px">
                 <div class="Caption">
-                    <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
-                    </p>
+                    <p><?php echo $row['caption']; ?> </p>
                 </div>
             </div>
-            <div class="newscard">
-                <h6><b>Classic Fashion Store</b></h6>
-                <img src="./img/product3.jfif" alt="post" width="260px">
-                <div class="Caption">
-                    <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
-                    </p>
-                </div>
-            </div>
-    </div>
-    
+            <?php
+            }
+
+            ?>
         </div>
 </body>
 
