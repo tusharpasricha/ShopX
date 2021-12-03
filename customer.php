@@ -20,106 +20,54 @@ session_start();
 
 <body>
    <div class="box1">
-      <nav>
-         <div class="nav-center">
-            <div class="nav-header">
-               <h1>ShopX</h1>
-               <button class="nav-toggle">
-                  <i class="fas fa-bars"></i>
-               </button>
-            </div>
-            <div class="toogle__items">
-               <ul class="links">
-                  <li>
-                     <a href="#">home</a>
-                  </li>
-                  <li>
-                     <a href="newsfeed_c.php">News Feed</a>
-                  </li>
-
-                  <li>
-                     <a href="./login/logout.php">Logout</a>
-                  </li>
-               </ul>
-               <div class="profile">
-                  <p><?php echo $_SESSION['username']; ?></p>
-
-               </div>
-            </div>
-         </div>
-      </nav>
+      <div id="menu">
+         <?php
+         include('nav_c.php');
+         echo addMenu("customer");
+         ?>
+      </div>
       <div class="box2">
          <h4>SHOPS</h4>
       </div>
       <div class="block">
-         <div class="card">
-            <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
-               <a href="products.php"><button class="enter">Enter</button></a>
-            </div>
-         </div>
-         <div class="card">
-            <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
+         <?php
 
-               <a href="products.php"><button class="enter">Enter</button></a>
-            </div>
-         </div>
-         <div class="card">
-            <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
-               <a href="products.php"><button class="enter">Enter</button></a>
-            </div>
-         </div>
+         $sql = "SELECT * FROM `shop` ";
+         $res = mysqli_query($conn, $sql);
+         $num = mysqli_num_rows($res);
 
-         <div class="card">
-            <img src="./img/shop2.jfif" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
-               <a href="products.php"><button class="enter">Enter</button></a>
+         if ($num <= 0) {
+            echo "no shops present";
+         }
+         while ($row = mysqli_fetch_assoc($res)) {
+            //<?php echo "upload/" . $row['image'];
+         ?>
+            <div class="card">
+               <img src="img/shoe1.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
+               <div class="container">
+                  <h6><b><?php echo $row['shop_name'];  ?></b></h6>
+                  <a href="products.php"><button class="enter" onclick="showproduct($row['shop_id'])">Enter</button></a>
+               </div>
             </div>
-         </div>
-         <div class="card">
-            <img src="./img/shop1.jfif" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
-               <a href="products.php"><button class="enter">Enter</button></a>
-            </div>
-         </div>
-         <div class="card">
-            <img src="./img/shop3.jfif" alt="shoe" style="width: 80%" height="80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
-               <a href="products.php"><button class="enter">Enter</button></a>
-            </div>
-         </div>
-         <div class="card">
-            <img src="img/shoe1.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
-               <a href="products.php"><button class="enter">Enter</button></a>
-            </div>
-         </div>
-         <div class="card">
-            <img src="img/shoe1.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
-               <a href="products.php"><button class="enter">Enter</button></a>
-            </div>
-         </div>
-         <div class="card">
-            <img src="img/shoe1.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
-            <div class="container">
-               <h6><b>Classic Fashion Store</b></h6>
-               <a href="products.php"><button class="enter">Enter</button></a>
-            </div>
-         </div>
+         <?php
+         }
+
+         ?>
+
       </div>
+      <script>
+         function showproduct() {
+            <?php
 
-      <!-- <div class="feedbox2">
+
+            ?>
+
+         }
+      </script>
+
+   </div>
+
+   <!-- <div class="feedbox2">
             <div class="feedbox1">
                 <h4>NEWSFEEDS</h4>
             </div>

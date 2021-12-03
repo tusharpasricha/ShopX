@@ -21,33 +21,12 @@ session_start();
 <body>
 
     <div class="box1">
-        <nav>
-            <div class="nav-center">
-                <div class="nav-header">
-                    <h1>ShopX</h1>
-                    <button class="nav-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="toogle__items">
-                    <ul class="links">
-                        <li>
-                            <a href="./newsfeed_s.php">News feed</a>
-                        </li>
-                        <li>
-                            <a href="./myproducts.php">My Products</a>
-                        </li>
-                        <li>
-                            <a href="./login/logout.php">Logout</a>
-                        </li>
-                    </ul>
-                    <div class="profile">
-                        <p><?php echo $_SESSION['username']; ?></p>
-
-                    </div>
-                </div>
-            </div>
-        </nav>
+    <div id="menu">
+            <?php
+            include('nav_s.php');
+            echo addMenu("");
+            ?>
+        </div>
         <div class="box2">
             <h4>PROFILE</h4>
         </div>

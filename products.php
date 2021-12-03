@@ -1,3 +1,7 @@
+<?php
+require('./login/db_connect.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,37 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="styleCustomerview.css" />
     <script src="script.js"></script>
+    <script>
+        function showproduct
+        <?php
+
+        ?>
+    </script>
+
 </head>
 
 <body>
     <div class="box1">
-        <nav>
-            <div class="nav-center">
-                <div class="nav-header">
-                    <h1>ShopX</h1>
-                    <button class="nav-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="toogle__items">
-                    <ul class="links">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Shops</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Logout</a>
-                        </li>
-                    </ul>
-                    <div class="profile">
-                        <p>Tushar Pasricha</p>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <div id="menu">
+            <?php
+            include('nav_c.php');
+            echo addMenu("customer");
+            ?>
+        </div>
         <div class="box2">
             <h4>PRODUCTS</h4>
         </div>
@@ -48,7 +38,7 @@
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
             <div class="card">
@@ -56,14 +46,14 @@
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
 
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
             <div class="card">
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
 
@@ -71,42 +61,42 @@
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
             <div class="card">
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
             <div class="card">
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
             <div class="card">
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
             <div class="card">
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
             <div class="card">
                 <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
                 <div class="container">
                     <h6><b>Nike Air Max</b></h6>
-                    <button class="enter">View Product</button>
+                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
                 </div>
             </div>
         </div>

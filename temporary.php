@@ -1,3 +1,7 @@
+<?php
+require('./login/db_connect.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,26 +9,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="styleCustomerview.css" />
     <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0206006232.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js "></script>
     <style>
-        /* * {
-            box-sizing: border-box;
-        } */
-
-        /* body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        } */
-
         .topnav {
             margin-left: 200px;
             overflow: hidden;
@@ -41,24 +35,6 @@
             font-size: 17px;
             text-transform: uppercase;
         }
-
-        /* .topnav a:after {
-            background: none repeat scroll 0 0 transparent;
-            bottom: 0;
-            content: "";
-            display: block;
-            height: 2px;
-            left: 50%;
-            position: absolute;
-            background: black;
-            transition: width 0.3s ease 0s, left 0.3s ease 0s;
-            width: 0;
-        }
-
-        a:hover:after {
-            width: 100%;
-            left: 0;
-        } */
 
         .topnav a:hover {
             background-color: #fdbc0c;
@@ -86,56 +62,39 @@
             outline: none;
         }
 
-        /* @media screen and (max-width: 600px) {
-            .topnav .search-container {
-                float: none;
-            }
+        .fa-heart-o {
+            color: red;
+            cursor: pointer;
+        }
 
-            .topnav a,
-            .topnav input[type=text],
-            .topnav .search-container button {
-                float: none;
-                display: block;
-                text-align: left;
-                width: 100%;
-                margin: 0;
-                padding: 14px;
-            }
-
-            .topnav input[type=text] {
-                border: 1px solid #ccc;
-            }
-        } */
+        .fa-heart {
+            color: red;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        $(document).ready(function() {
+            $("#heart").click(function() {
+                if ($("#heart").hasClass("liked")) {
+                    $("#heart").html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
+                    $("#heart").removeClass("liked");
+                } else {
+                    $("#heart").html('<i class="fa fa-heart" aria-hidden="true"></i>');
+                    $("#heart").addClass("liked");
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
     <div class="box1">
-        <nav>
-            <div class="nav-center">
-                <div class="nav-header">
-                    <h1>ShopX</h1>
-                </div>
-                <div class="topnav">
-                    <a class="active" href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                    <div class="search-container">
-                        <form action="/action_page.php">
-                            <input type="text" placeholder="Search.." name="search" autocomplete="off">
-                        </form>
-                    </div>
-                </div>
-                <a href="./profile.php">
-                    <div class="profile">
-                        <p>
-                            abcd
-                        </p>
-                    </div>
-                </a>
-            </div>
-        </nav>
-
+        <div id="menu">
+            <?php
+            include('nav_c.php');
+            echo addMenu("newsfeed");
+            ?>
+        </div>
         <div class="box2">
             <h4>NEWS FEED</h4>
         </div>
@@ -148,6 +107,7 @@
 
                     <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
                     </p>
+                    <span id=heart><i class="fa fa-heart-o" aria-hidden="true"></i> </span>
                 </div>
             </div>
             <div class="newscard">
@@ -178,6 +138,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

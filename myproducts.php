@@ -17,45 +17,32 @@ session_start();
 
 <body>
     <div class="box1">
-        <nav>
-            <div class="nav-center">
-                <div class="nav-header">
-                    <h1>ShopX</h1>
-                    <button class="nav-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="toogle__items">
-                    <ul class="links">
-                        <li>
-                            <a href="./newsfeed_s.php">News feed</a>
-                        </li>
-                        <li>
-                            <a href="./myproducts.php">My Products</a>
-                        </li>
-                        <li>
-                            <a href="./login/logout.php">Logout</a>
-                        </li>
-                    </ul>
-                    <a href="./profile.php">
-                        <div class="profile">
-                            <p><?php echo $_SESSION['username']; ?></p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </nav>
+        <div id="menu">
+            <?php
+            include('nav_s.php');
+            echo addMenu("mp");
+            ?>
+        </div>
         <div class="box2">
             <h4>PRODUCTS</h4>
         </div>
 
         <div class="block" style="align-items: center ">
+            <div class="card">
+                <br><br>
+                <img src="./img/add.png" alt=" item" style="width:40%" height="40%" style="align-items: center">
+                <div class="container">
+                    <br>
+                    <a href="seller.php"><button class="enter">Add Product</button></a>
+                </div>
+
+            </div>
             <?php
             // include './login/db_connect.php';
             // session_start();
             $sid = $_SESSION["shopid"];
 
-            $sql = "SELECT * FROM `products` where shop_id='$sid'";
+            $sql = "SELECT * FROM `products` where shop_id='$sid' ORDER BY timestamp DESC";
             $res = mysqli_query($conn, $sql);
             $num = mysqli_num_rows($res);
 
@@ -75,15 +62,7 @@ session_start();
             }
 
             ?>
-            <div class="card">
-                <br><br>
-                <img src="./img/add.png" alt=" item" style="width:40%" height="40%" style="align-items: center">
-                <div class="container">
-                    <br>
-                    <a href="seller.php"><button class="enter">Add Product</button></a>
-                </div>
 
-            </div>
 
 </body>
 

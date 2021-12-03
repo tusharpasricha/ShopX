@@ -95,7 +95,7 @@ body{
       border-radius: 15px;
   }
   a{
-      color: white;
+      color: blackstrtoupper !important;
       text-decoration: none;
   }
   .enter:hover{
@@ -166,42 +166,10 @@ body{
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.06);
   }
   
-  /* .nav-header {
-    flex: 4;
-  } */
-  
   .nav-header h1 {
     color: black;
     font-size: 22px;
     margin-left: 45px;
-  }
-  
-
-  .links {
-    display: flex;
-  }
-  
-  .links li {
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    margin: 0 5px;
-    text-transform: capitalize;
-  }
-  
-  .links li a {
-    
-    color: white;
-    font-weight: bolder;
-    transition: color 0.4s ease-in-out;
-    text-decoration: none;
-  }
-  .links li a:hover{
-    color: black;
-    font-size: 16.5px;
-  }
-  .nav-toggle {
-    display: none;
   }
   
   .profile {
@@ -214,82 +182,5 @@ body{
   
   .profile p {
     margin-bottom: 0;
-  }
-  
-  ol,
-  ul {
-    padding-left: 0;
-    margin-bottom: 0;
-  }
-  
-  .toogle__items {
-    flex: 6;
-    display: flex;
-    justify-content: space-between;
-  }
-  @media (max-width: 700px) {
-    .nav-toggle {
-      display: block;
-      position: absolute;
-      top: 10px;
-      right: 25px;
-      font-size: 30px;
-      border: none;
-      background-color: #fff;
-      cursor: pointer;
-      transition: transform 0.6s ease-in-out;
-    }
-  
-    .nav-toggle.active {
-      transform: rotate(90deg);
-    }
-  
-    .toogle__items {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 92vh;
-      top: 8vh;
-      left: -100%;
-      transition: transform 1s ease-in-out;
-      background-color: black;
-      overflow: hidden;
-    }
-  
-    .links {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .profile {
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-right: 0;
-    }
-  
-    .links li a {
-      color: #fff;
-      translate: all 0.6s ease-in-out
-    }
-  
-    .links li a:hover {
-      color: #fff;
-      font-weight: 600;
-    }
-  
-    .toogle__items.active {
-      transform: translatex(100%);
-    }
-    .social-icons {
-      display: none;
-    }
   }
   

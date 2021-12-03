@@ -17,9 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $sql = "SELECT * from users where user_name ='$username'and cpassword ='$password' ";
    $res = mysqli_query($conn, $sql);
 
-   if (!$res) {
-      die("SQL query failed: " . mysqli_error($conn));
-   }
+
    $num = mysqli_num_rows($res);
    $row = mysqli_fetch_assoc($res);
    if ($num <= 0) {

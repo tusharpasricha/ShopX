@@ -31,36 +31,13 @@ session_start();
 </script>
 
 <body>
-    <br>
-
     <div class="box1">
-        <nav>
-            <div class="nav-center">
-                <div class="nav-header">
-                    <h1>ShopX</h1>
-                    <button class="nav-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="toogle__items">
-                    <ul class="links">
-                        <li>
-                            <a href="./newsfeed_s.php">News feed</a>
-                        </li>
-                        <li>
-                            <a href="./myproducts.php">My Products</a>
-                        </li>
-                        <li>
-                            <a href="./login/logout.php">Logout</a>
-                        </li>
-                    </ul>
-                    <div class="profile">
-                        <p><?php echo $_SESSION['username']; ?></p>
-
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <div id="menu">
+            <?php
+            include('nav_s.php');
+            echo addMenu("mp");
+            ?>
+        </div>
         <div class="box2">
             <h4>ADD PRODUCTS</h4>
         </div>
@@ -74,7 +51,7 @@ session_start();
                         <input class="form-control" type="text" name="prod_name" placeholder="Product name" required>
                         <br>
                     </div>
-                   
+
                     <div class="txtfield">
                         <input class="form-control" type="text" name="prod_desc" placeholder="Description" required>
                         <br>
@@ -86,7 +63,7 @@ session_start();
                     <div class="txtfield">
 
                         <input type="file" id="image" name="image" accept="image/*" required>
-                        
+
                     </div>
 
                     <button class="btn">Add</button>
