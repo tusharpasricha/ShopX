@@ -60,7 +60,7 @@ function addMenu($pageName)
                 <a href="./customer.php" '  . ($pageName == "customer" ? "class=\"active\"" : "") . '  >Home</a>
                 <a href="./newsfeed_c.php"  ' . ($pageName == "newsfeed" ? "class=\"active\"" : "") . '>Newsfeed</a>
                 <div class="search-container">
-                    <form action="/action_page.php">
+                    <form action="./search.php">
                         <input type="text" placeholder="Search.." name="search" autocomplete="off">
                     </form>
                 </div>

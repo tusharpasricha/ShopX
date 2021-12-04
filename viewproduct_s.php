@@ -44,7 +44,7 @@ session_start();
                 <div class="txtfield">
                     <h1>₹ 8000/-</h1>
                 </div>
-                <a href="./edit_product.php"><button class="btn">Edit</button></a>
+                <a href="/edit_product.php"><button class="btn">Edit</button></a>
             </div>
         </div>
 </body>

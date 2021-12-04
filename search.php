@@ -27,19 +27,19 @@ session_start();
          ?>
       </div>
       <div class="box2">
-         <h4>SHOPS</h4>
+         <h4>Search Results</h4>
       </div>
       <div class="block">
          <?php
 
 
 
-         $sql = "SELECT * FROM `shop` ";
+         $sql = "SELECT * FROM `shop`, `products` WHERE shop_name = '' OR product_title = '' ";
          $res = mysqli_query($conn, $sql);
          $num = mysqli_num_rows($res);
 
          if ($num <= 0) {
-            echo "no shops present";
+            echo "no results";
          }
          while ($row = mysqli_fetch_assoc($res)) {
             //<?php echo "upload/" . $row['image'];
