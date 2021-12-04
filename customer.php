@@ -32,6 +32,8 @@ session_start();
       <div class="block">
          <?php
 
+
+
          $sql = "SELECT * FROM `shop` ";
          $res = mysqli_query($conn, $sql);
          $num = mysqli_num_rows($res);
@@ -46,7 +48,7 @@ session_start();
                <img src="img/shoe1.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
                <div class="container">
                   <h6><b><?php echo $row['shop_name'];  ?></b></h6>
-                  <a href="products.php"><button class="enter" onclick="showproduct($row['shop_id'])">Enter</button></a>
+                  <a href="products.php?s_id = <?php $row['shop_id'] ?>"><button class="enter">Enter</button></a>
                </div>
             </div>
          <?php

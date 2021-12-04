@@ -19,6 +19,7 @@ session_start();
 
 </head>
 
+
 <body>
     <div class="box1">
         <div id="menu">
@@ -28,41 +29,24 @@ session_start();
             ?>
         </div>
         <div class="box2">
-            <h4>ADD PRODUCTS</h4>
+            <!-- <h4>ADD PRODUCTS</h4> -->
         </div>
-        <form action="./add_prod.php" method="post" enctype="multipart/form-data">
-            <div class="addproduct">
-                <div class="vector">
-                    <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
-                </div>
-                <div class="productform">
-                    <div class="txtfield">
-                        <input class="form-control" type="text" name="prod_name" placeholder="Product name" required>
-                        <br>
-                    </div>
-
-                    <div class="txtfield">
-                        <input class="form-control" type="text" name="prod_desc" placeholder="Description" required>
-                        <br>
-                    </div>
-                    <div class="txtfield">
-                        <input class="form-control" type="number" name="price" placeholder="Price" required>
-                        <br>
-                    </div>
-                    <div class="txtfield">
-
-                        <input type="file" id="image" name="image" accept="image/*" required>
-
-                    </div>
-
-                    <button class="btn">Add</button>
-                </div>
+        <div class="addproduct">
+            <div class="onlyproduct">
+                <img src="./img/shoe1.png" alt="rhgrd" width="280px" height="280px">
             </div>
-
-
-    </div>
-    </form>
-
+            <div class="description">
+                <h1>Nike Air</h1>
+                <div class="txtfield">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est consectetur facilis laboriosam itaque maxime aliquid!</p>
+                </div>
+                <br>
+                <div class="txtfield">
+                    <h1>₹ 8000/-</h1>
+                </div>
+                <a href="./edit_product.php"><button class="btn">Edit</button></a>
+            </div>
+        </div>
 </body>
 
 </html>

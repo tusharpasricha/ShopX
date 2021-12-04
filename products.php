@@ -34,71 +34,33 @@ session_start();
             <h4>PRODUCTS</h4>
         </div>
         <div class="block">
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
+            <?php
+            $shopid = $_GET['s_id'];
+            if (isset($shopid)) {
 
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
+                $products = get_allproducts($shopid);
 
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/shoe1.png" alt="shoe" style="width:80%" style="align-items: center;">
-                <div class="container">
-                    <h6><b>Nike Air Max</b></h6>
-                    <a href="./viewproduct.php"><button class="enter">View Product</button></a>
-                </div>
-            </div>
+                if ($num <= 0) {
+                    echo "no shops present";
+                }
+                while ($row = mysqli_fetch_assoc($products)) {
+                    //<?php echo "upload/" . $row['image'];
+            ?>
+                    <div class="card">
+                        <img src="<?php echo "upload/" . $row['image']; ?>" alt="shoe" style="width:80%" style="align-items: center;">
+                        <div class="container">
+                            <h6><b>
+                                    <?php $row['product_title']; ?> < /b>
+                            </h6>
+                            <a href="./viewproduct.php?p_id=<?= $row['shop_id'] ?>"><button class="enter">View Product</button></a>
+                        </div>
+                    </div>
+            <?php
+                }
+            }
+            ?>
+
+
         </div>
 
 </body>

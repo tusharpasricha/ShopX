@@ -107,7 +107,7 @@ session_start();
 
                     <p>New Product Added Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, error.
                     </p>
-                    <span id=heart><i class="fa fa-heart-o" aria-hidden="true"></i> </span>
+                    <span id=heart><i class="fa fa-heart fa-2x" aria-hidden="true"></i> </span>
                 </div>
             </div>
             <div class="newscard">
