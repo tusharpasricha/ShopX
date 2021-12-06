@@ -48,7 +48,8 @@ session_start();
                <img src="img/shoe1.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
                <div class="container">
                   <h6><b><?php echo $row['shop_name'];  ?></b></h6>
-                  <a href="products.php?s_id = <?php $row['shop_id'] ?>"><button class="enter">Enter</button></a>
+                  <?php echo  $row['shop_id'] ?>
+                  <a href="products.php?s_id=<?php echo $row['shop_id'] ?>"><button class="enter">Enter</button></a>
                </div>
             </div>
          <?php
@@ -57,15 +58,6 @@ session_start();
          ?>
 
       </div>
-      <script>
-         function showproduct() {
-            <?php
-
-
-            ?>
-
-         }
-      </script>
 
    </div>
 

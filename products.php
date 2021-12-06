@@ -1,5 +1,6 @@
 <?php
 require('./login/db_connect.php');
+require_once('getfunction.php');
 session_start();
 ?>
 <!DOCTYPE html>
@@ -13,12 +14,6 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="styleCustomerview.css" />
     <script src="script.js"></script>
-    <script>
-        function showproduct
-        <?php
-
-        ?>
-    </script>
 
 </head>
 
@@ -30,29 +25,34 @@ session_start();
             echo addMenu("customer");
             ?>
         </div>
-        <div class="box2">
-            <h4>PRODUCTS</h4>
-        </div>
-        <div class="block">
-            <?php
-            $shopid = $_GET['s_id'];
+        <?php
+            if(isset($_GET['s_id'])){
+                $shopid = $_GET['s_id'];
+            }
             if (isset($shopid)) {
-
                 $products = get_allproducts($shopid);
+                $res_shopname=mysqli_query($conn,"SELECT * FROM shop WHERE shop_id = '$shopid'");
+                $shopname = mysqli_fetch_array($res_shopname);
 
-                if ($num <= 0) {
-                    echo "no shops present";
-                }
-                while ($row = mysqli_fetch_assoc($products)) {
+               ?>
+        <div class="box2">
+            <h4><?php echo strtoupper($shopname['shop_name']); ?></h4>
+        </div>
+        
+        <div class="block">
+        
+            <?php
+                
+                
+                while ( $row = mysqli_fetch_assoc($products) ) {
                     //<?php echo "upload/" . $row['image'];
             ?>
                     <div class="card">
-                        <img src="<?php echo "upload/" . $row['image']; ?>" alt="shoe" style="width:80%" style="align-items: center;">
+                        <img src="<?php echo "upload/" . $row['image']; ?>" alt="shoe"  width="100%" height="85%" style="align-items: center;">
                         <div class="container">
-                            <h6><b>
-                                    <?php $row['product_title']; ?> < /b>
+                            <h6><b><?php $row['product_title']; ?> </b>
                             </h6>
-                            <a href="./viewproduct.php?p_id=<?= $row['shop_id'] ?>"><button class="enter">View Product</button></a>
+                            <a href="viewproduct.php?p_id=<?php echo $row['product_id'] ?>"><button class="enter">View Product</button></a>
                         </div>
                     </div>
             <?php

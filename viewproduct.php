@@ -1,5 +1,6 @@
 <?php
 require('./login/db_connect.php');
+require_once('getfunction.php');
 session_start();
 ?>
 <!DOCTYPE html>
@@ -32,21 +33,32 @@ session_start();
             <!-- <h4>ADD PRODUCTS</h4> -->
         </div>
         <div class="addproduct">
+        <?php
+            if(isset($_GET['p_id'])){
+                $productid = $_GET['p_id'];
+            }
+            if (isset($productid)) {
+                $products = get_product($productid);
+                
+                $row = mysqli_fetch_assoc($products);
+            }
+                ?>
             <div class="onlyproduct">
-                <img src="./img/shoe1.png" alt="rhgrd" width="280px" height="280px">
+                <img src="<?php echo "upload/" . $row['image']; ?>" alt="rhgrd" width="60%" height="50%">
             </div>
             <div class="description">
-                <h1>Nike Air</h1>
+                <h1><?php $row['product_title']; ?></h1>
                 <div class="txtfield">
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est consectetur facilis laboriosam itaque maxime aliquid!</p>
+                    <p><?php echo $row['product_desc']; ?></p>
                 </div>
                 <br>
                 <div class="txtfield">
-                    <h1>₹ 8000/-</h1>
+                    <h1>₹ <?php echo$row['price']; ?> /-</h1>
                 </div>
                 <button class="btn">Request Details</button>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

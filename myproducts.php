@@ -55,7 +55,7 @@ session_start();
                     <img src="<?php echo "upload/" . $row['image']; ?>" alt=" item" style="width:90%" height="60%" style="align-items: center">
                     <div class="container">
                         <h6><b><?php echo $row['product_title'];  ?></b></h6>
-                        <a href="./viewproduct_s.php"><button class="enter">View Product</button></a>
+                        <a href="viewproduct_s.php?p_id=<?php echo $row['product_id']; ?>"><button class="enter">View Product</button></a>
                     </div>
                 </div>
             <?php
