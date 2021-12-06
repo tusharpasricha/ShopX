@@ -41,8 +41,9 @@ session_start();
                         <input type="file" id="image-input" name="post_image" accept="image/*">
                     </div>
                     
-                    <div >
-                        <br>
+                    <div class="txtfield">
+                        <label>Caption</label>
+                        <h6>h</h6>
                         <input class="form-control" name="caption" type="text" placeholder="caption">
                     </div>
                     

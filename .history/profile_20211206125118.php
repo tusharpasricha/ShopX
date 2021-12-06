@@ -42,7 +42,6 @@ session_start();
                     </div>
                     
                     <div >
-                        <br>
                         <input class="form-control" name="caption" type="text" placeholder="caption">
                     </div>
                     

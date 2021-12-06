@@ -38,7 +38,7 @@ body{
       color: rgb(255, 255, 255);
       margin-left:50px;
       background-color:#fdbc0c ;
-      height: 175px;
+      height: 275px;
       width: 90%;
       border-radius: 55px;
       border-style: solid;
@@ -191,10 +191,10 @@ body{
       margin-left: 30px;
       margin-top: -130px;
         /* margin: 20px; */
-        padding: 10px;
+        padding: 20px;
         /* background-color: #ffd5b5 ; */
         width: 80%;
-        color: rgb(2, 2, 2);
+        color: rgb(0, 0, 0);
         /* background-color: rgb(160, 54, 54); */
         background: transparent;
         

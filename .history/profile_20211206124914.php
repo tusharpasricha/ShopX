@@ -37,15 +37,16 @@ session_start();
                 </div> -->
                 <div class="productform1">
                    
+                   
+                    
+                    <div class="txtfield">
+                        <label>Caption</label>
+                        <input class="form-control" name="caption" type="text" placeholder="caption">
+                    </div>
+                    <br>
                     <div class="txtfield">
                         <input type="file" id="image-input" name="post_image" accept="image/*">
                     </div>
-                    
-                    <div >
-                        <br>
-                        <input class="form-control" name="caption" type="text" placeholder="caption">
-                    </div>
-                    
                     <button class="btn">Add</button>
                 </div>
             </div>

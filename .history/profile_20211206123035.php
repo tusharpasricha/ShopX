@@ -32,27 +32,26 @@ session_start();
         </div>
         <form action="./add_post.php" method="post" enctype="multipart/form-data">
             <div class="addproduct1">
-                <!-- <div class="vector1">
+                <div class="vector1">
                     <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
-                </div> -->
+                </div>
                 <div class="productform1">
                    
                     <div class="txtfield">
                         <input type="file" id="image-input" name="post_image" accept="image/*">
                     </div>
-                    
-                    <div >
-                        <br>
-                        <input class="form-control" name="caption" type="text" placeholder="caption">
+                    <br>
+                    <div class="txtfield">
+                        <label>Caption</label>
+                        <input class="form-control" name="caption" type="text">
                     </div>
-                    
+                    <br>
                     <button class="btn">Add</button>
                 </div>
             </div>
     </form>
     <br>
-   <br>
-   <br>
+   
     <div class="newsfeeds">
 
     <?php

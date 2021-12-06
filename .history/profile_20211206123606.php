@@ -41,9 +41,9 @@ session_start();
                         <input type="file" id="image-input" name="post_image" accept="image/*">
                     </div>
                     
-                    <div >
-                        <br>
-                        <input class="form-control" name="caption" type="text" placeholder="caption">
+                    <div class="txtfield">
+                        <label>Caption</label>
+                        <input class="form-control" name="caption" type="text">
                     </div>
                     
                     <button class="btn">Add</button>
@@ -53,7 +53,7 @@ session_start();
     <br>
    <br>
    <br>
-    <div class="newsfeeds">
+    <!-- <div class="newsfeeds">
 
     <?php
             // include './login/db_connect.php';
@@ -80,7 +80,7 @@ session_start();
             }
 
             ?>
-        </div>
+        </div> -->
 </body>
 
 </html>
