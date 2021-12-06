@@ -43,13 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product_id = $_GET['p_id'];
 
     $shopid = $_SESSION['shopid'];
-    $sql = "UPDATE `products` SET `product_desc`=' ".$_POST['prod_desc']."',`product_title`='".$_POST['prod_name']."',`price`='".$_POST['price']." ,`image`='$NewImageName' WHERE product_id = '$product_id' ";
+    $sql = "UPDATE `products` SET `product_desc`=' ".$_POST['prod_desc']."',`product_title`='".$_POST['prod_name']."',`price`='".$_POST['price']."' , `image` ='$NewImageName' WHERE product_id = '$product_id' ";
     $res = mysqli_query($conn, $sql);
     if (!$res) {
         die("SQL query failed: " . mysqli_error($conn));
     } else {
-        //echo $sql;
-       // header("Location:./myproducts.php");
+        
+       header("Location:./myproducts.php");
     }
 }
 ?>
