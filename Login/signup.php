@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   session_start();
   $name = $_POST["name"];
+  strtoupper($name);
   $email = $_POST["email"];
   if (isset($_POST['radio'])) {
     $acc_type = $_POST['radio'];

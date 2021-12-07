@@ -22,7 +22,7 @@ body{
       background-image: linear-gradient(to top left,#ffebc2,#ffce7e);
   
       /* background-color: #ffebc2; */
-      margin-top: 70px;
+      margin-top: 30px;
       /* margin-bottom: 20px; */
       margin-left: 225px;
       margin-right: 60px;
@@ -109,19 +109,21 @@ body{
     
   }
   .card{
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      width: 250px;
-      height: 250px;
-      border-radius: 20px;
-      background-color: #ffd5b5;
-      padding: 10px 10px 10px 10px; 
-       margin-top: 30px;
-      margin-left: 20px;
-      text-align: center;
+    box-shadow: 0 4px 8px 0 #f9b185;
+    transition: 0.3s;
+    width: 260px;
+    height: 280px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+    text-align: center;
+    align-items: center;
     }
     .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px 0 #f58a47;
       cursor: pointer;
     } 
     
@@ -261,13 +263,13 @@ body{
       font-size: 12px;
     } */
     .btn{
-      width: 70%;
-      height: 48px;
+      width: 150px;
+      height: 70px;
       margin-top: 20px;
       border: 1px solid;
       text-transform: uppercase;
       background-color: teal;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 18px;
       color: #e9f4fb;
       font-weight: 500;
@@ -312,16 +314,35 @@ body{
     
     .profile p {
       margin-bottom: 0;
-    }    
-
+    }   
+    
+    .productdetail{
+      display:flex;
+      justify-content:center;
+      overflow:hidden;
+      padding:30px;
+    }
+    .image{
+      border-radius:10px;
+      width:40%; 
+      height:40%;
+      display: block;
+      margin:auto;
+      width: 50%;
+    }
     .description{
       /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
-      margin-left: 40px;
+      /* margin-left: -100px; */
       margin-top: 20px;
+      /* padding:30px; */
         /* margin: 20px; */
         /* padding: 20px; */
         /* background-color: #ffd5b5 ; */
         width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 50px;
         color: rgb(0, 0, 0);
         background-color: rgb(255, 255, 255);   
     }

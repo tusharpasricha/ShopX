@@ -26,42 +26,45 @@ session_start();
             ?>
         </div>
         <?php
-            if(isset($_GET['s_id'])){
-                $shopid = $_GET['s_id'];
-            }
-            if (isset($shopid)) {
-                $products = get_allproducts($shopid);
-                $res_shopname=mysqli_query($conn,"SELECT * FROM shop WHERE shop_id = '$shopid'");
-                $shopname = mysqli_fetch_array($res_shopname);
+        if (isset($_GET['s_id'])) {
+            $shopid = $_GET['s_id'];
+        }
+        if (isset($shopid)) {
+            $products = get_allproducts($shopid);
+            $res_shopname = mysqli_query($conn, "SELECT * FROM shop WHERE shop_id = '$shopid'");
+            $shopname = mysqli_fetch_array($res_shopname);
 
-               ?>
-        <div class="box2">
-            <h4><?php echo strtoupper($shopname['shop_name']); ?></h4>
-        </div>
-        
-        <div class="block">
-        
-            <?php
-                
-                
-                while ( $row = mysqli_fetch_assoc($products) ) {
+        ?>
+            <div class="box2">
+                <div class="follow">
+                    <h4> <?php echo strtoupper($shopname['shop_name']); ?></h4>
+                </div>
+            </div>
+
+            <div class="block">
+
+                <?php
+
+
+                while ($row = mysqli_fetch_assoc($products)) {
                     //<?php echo "upload/" . $row['image'];
-            ?>
-                    <div class="card">
-                        <img src="<?php echo "upload/" . $row['image']; ?>" alt="shoe"  width="100%" height="85%" style="align-items: center;">
-                        <div class="container">
-                            <h6><b><?php $row['product_title']; ?> </b>
-                            </h6>
-                            <a href="viewproduct.php?p_id=<?php echo $row['product_id'] ?>"><button class="enter">View Product</button></a>
+                ?>
+                    <a href="viewproduct.php?p_id=<?php echo $row['product_id'] ?>">
+                        <div class="card">
+                            <div style="width: 90%; height: 80%; object-fit: contain;"><img src="<?php echo "upload/" . $row['image']; ?>" alt="product" border-radius="10px" width="100%" height="100%" style="align-items: center;"></div>
+                            <div class="container">
+                                <h6><?php echo strtoupper($row['product_title']); ?></h6>
+                                <h5>₹ <?php echo $row['price']; ?>/-</h5>
+                            </div>
                         </div>
-                    </div>
+                    </a>
             <?php
                 }
             }
             ?>
 
 
-        </div>
+            </div>
 
 </body>
 

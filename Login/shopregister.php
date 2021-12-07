@@ -5,7 +5,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    include './db_connect.php';
    session_start();
    $sname = $_POST["sname"];
+   strtoupper($sname);
    $gstin = $_POST["gstin"];
+   strtoupper($gstin);
    $locality = $_POST["locality"];
    $state = $_POST["state"];
    $city = $_POST["city"];

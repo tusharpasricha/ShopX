@@ -1,6 +1,6 @@
 <style>
     .topnav {
-        margin-left: 200px;
+        margin-left: 180px;
         overflow: hidden;
     }
 
@@ -41,6 +41,10 @@
         background: white;
         border-radius: 30px;
         outline: none;
+        background-image: url("./img/search.png");
+        background-size: 20px 20px;
+        background-position: 190px;
+        background-repeat: no-repeat;
     }
 </style>
 <?php
@@ -60,14 +64,14 @@ function addMenu($pageName)
                 <a href="./customer.php" '  . ($pageName == "customer" ? "class=\"active\"" : "") . '  >Home</a>
                 <a href="./newsfeed_c.php"  ' . ($pageName == "newsfeed" ? "class=\"active\"" : "") . '>Newsfeed</a>
                 <div class="search-container">
-                    <form action="./search.php">
-                        <input type="text" placeholder="Search.." name="search" autocomplete="off">
+                    <form action="./search.php" method="POST">
+                        <input type="text" placeholder="Search.." name="search" autocomplete="off" rows:"1" cols:"15" minlength:"4">
                     </form>
                 </div>
                 
             </div>
                 <div class="profile">
-                    <p>Welcome ' . strtoupper ($_SESSION['username'] ). '! </p>
+                    <p>Welcome ' . strtoupper($_SESSION['username']) . '! </p>
                     <a href="./login/logout.php"><img src = "./img/logout.png" width = "30px" height = "30px" style = "margin-left: 20px;"></a>
                 </div>
 

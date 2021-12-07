@@ -28,15 +28,17 @@ session_start();
         </div>
 
         <div class="block" style="align-items: center ">
-            <div class="card">
-                <br><br>
-                <img src="./img/add.png" alt=" item" style="width:40%" height="40%" style="align-items: center">
-                <div class="container">
-                    <br>
-                    <a href="seller.php"><button class="enter">Add Product</button></a>
-                </div>
+            <a href="seller.php">
+                <div class="card">
+                    <br><br>
+                    <img src="./img/add.png" alt=" item" style="width:40%" height="40%" style="align-items: center">
+                    <div class="container">
+                        <br>
+                        Add Product
+                    </div>
 
-            </div>
+                </div>
+            </a>
             <?php
             // include './login/db_connect.php';
             // session_start();
@@ -51,18 +53,22 @@ session_start();
             }
             while ($row = mysqli_fetch_assoc($res)) {
             ?>
-                <div class="card">
-                    <img src="<?php echo "upload/" . $row['image']; ?>" alt=" item" style="width:90%" height="60%" style="align-items: center">
-                    <div class="container">
-                        <h6><b><?php echo $row['product_title'];  ?></b></h6>
-                        <a href="viewproduct_s.php?p_id=<?php echo $row['product_id']; ?>"><button class="enter">View Product</button></a>
+                <a href="viewproduct_s.php?p_id=<?php echo $row['product_id']; ?>">
+                    <div class="card">
+                        <div style="width: 90%; height: 80%; object-fit: contain;"><img src="<?php echo "upload/" . $row['image']; ?>" alt="product" border-radius="10px" width="100%" height="100%" style="align-items: center;"></div>
+                        <div class="container">
+                            <h6><?php echo strtoupper($row['product_title']); ?></h6>
+                            <h5>₹ <?php echo $row['price']; ?>/-</h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             <?php
             }
 
             ?>
 
+        </div>
+        </div>
 
 </body>
 

@@ -27,45 +27,63 @@ session_start();
          ?>
       </div>
       <div class="box2">
-         <h4>Search Results</h4>
+         <h4>SEARCH RESULTS</h4>
       </div>
       <div class="block">
          <?php
 
+         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+            $search = $_POST['search'];
+            $sql = "SELECT * FROM  `products` WHERE  product_title LIKE '%$search%' OR product_desc LIKE '%$search%' ORDER BY product_id DESC ";
+            $res = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($res);
 
-         $sql = "SELECT * FROM `shop`, `products` WHERE shop_name = '' OR product_title = '' ";
-         $res = mysqli_query($conn, $sql);
-         $num = mysqli_num_rows($res);
+            $noresults = 1;
 
-         if ($num <= 0) {
-            echo "no results";
-         }
-         while ($row = mysqli_fetch_assoc($res)) {
-            //<?php echo "upload/" . $row['image'];
+            if ($num > 0) {
+               $noresults = 0;
+               while ($row = mysqli_fetch_assoc($res)) {
+                  //<?php echo "upload/" . $row['image'];
          ?>
-            <div class="card">
-               <img src="img/shoe1.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
-               <div class="container">
-                  <h6><b><?php echo $row['shop_name'];  ?></b></h6>
-                  <a href="products.php?s_id = <?php $row['shop_id'] ?>"><button class="enter">Enter</button></a>
-               </div>
-            </div>
+                  <a href="viewproduct.php?p_id=<?php echo $row['product_id'] ?>">
+                     <div class="card">
+                        <img src="<?php echo "upload/" . $row['image']; ?>" alt="shoe" width="100%" height="85%" style="align-items: center;">
+                        <div class="container">
+                           <h6><b><?php echo  $row['product_title']; ?> </b></h6>
+                        </div>
+                     </div>
+                  </a>
+               <?php
+               }
+            }
+            $sql2 = "SELECT * FROM  `shop` WHERE  shop_name LIKE '%$search%' ORDER BY shop_id DESC ";
+            $res2 = mysqli_query($conn, $sql2);
+            $num2 = mysqli_num_rows($res2);
+            if ($num2 > 0) {
+               $noresults = 0;
+               while ($row2 = mysqli_fetch_assoc($res2)) {
+
+               ?>
+                  <a href="products.php?s_id=<?php echo $row2['shop_id'] ?>">
+                     <div class="card">
+                        <img src="img/shop.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
+                        <div class="container">
+                           <h6><b><?php echo $row2['shop_name'];  ?></b></h6>
+                        </div>
+                     </div>
+                  </a>
+
+
          <?php
+               }
+            }
+            if ($noresults == 1) {
+               echo "no results";
+            }
          }
-
          ?>
-
       </div>
-      <script>
-         function showproduct() {
-            <?php
-
-
-            ?>
-
-         }
-      </script>
 
    </div>
 

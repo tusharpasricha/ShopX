@@ -33,22 +33,26 @@ session_start();
             <!-- <h4>ADD PRODUCTS</h4> -->
         </div>
         <div class="addproduct">
-        <?php
-            if(isset($_GET['p_id'])){
-                $productid = $_GET['p_id'];
-            }
-            if (isset($productid)) {
-                $products = get_product($productid);
-                $row = mysqli_fetch_assoc($products);
-            }
+            <div class="productdetail">
+
+
+                <?php
+                if (isset($_GET['p_id'])) {
+                    $productid = $_GET['p_id'];
+                }
+                if (isset($productid)) {
+                    $products = get_product($productid);
+
+                    $row = mysqli_fetch_assoc($products);
+                }
                 ?>
-            <div class="onlyproduct">
-                <img src="<?php echo "upload/" . $row['image']; ?>" alt="rhgrd" width="100%" height="100%">
-            </div>
-            <div class="description">
-                <h1><?php $row['product_title']; ?></h1>
+
+                <img class="image" src="<?php echo "upload/" . $row['image']; ?>" alt="product" ">
+
+                <div class=" description">
+                <h1><?php echo $row['product_title']; ?></h1>
                 <div class="txtfield">
-                    <p><?php $row['product_desc']; ?></p>
+                    <p><?php echo $row['product_desc']; ?></p>
                 </div>
                 <br>
                 <div class="txtfield">

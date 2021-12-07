@@ -44,20 +44,20 @@ session_start();
          while ($row = mysqli_fetch_assoc($res)) {
             //<?php echo "upload/" . $row['image'];
          ?>
-            <div class="card">
-               <img src="img/shoe1.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
-               <div class="container">
-                  <h6><b><?php echo $row['shop_name'];  ?></b></h6>
-                  <?php echo  $row['shop_id'] ?>
-                  <a href="products.php?s_id=<?php echo $row['shop_id'] ?>"><button class="enter">Enter</button></a>
+            <a href="products.php?s_id=<?php echo $row['shop_id'] ?>">
+               <div class="card">
+                  <img src="img/shop.png" alt="shop" style="width:80%" height="80%" style="align-items: center;">
+                  <div class="container">
+                     <h5><?php echo strtoupper($row['shop_name']);  ?></h5>
+                  </div>
                </div>
-            </div>
-         <?php
+            </a>
+   <?php
          }
 
-         ?>
+   ?>
 
-      </div>
+   </div>
 
    </div>
 
