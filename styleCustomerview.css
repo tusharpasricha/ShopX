@@ -138,7 +138,7 @@ a {
 .newsfeeds {
   margin-left: 160px;
   margin-top: -200px;
-  background-color: rgb(255, 226, 194);
+  background-color: none;
   width: 70%;
   height: 500px;
   justify-content: center;
@@ -146,8 +146,8 @@ a {
   display: grid;
   grid-template-rows: auto auto auto;
   border-radius: 55px;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, 0.883);
+  /* border-style: solid; */
+  /* border-color: rgba(255, 255, 255, 0.883); */
   border-width: 6px;
 }
 .newscard {
@@ -156,7 +156,7 @@ a {
   width: 600px;
   height: 300px;
   border-radius: 20px;
-  background-color: #ffd5b5;
+  background-color: white;
   padding: 33px 10px 10px 33px;
   margin-top: 20px;
   margin-left: 10px;
