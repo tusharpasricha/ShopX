@@ -46,7 +46,7 @@ session_start();
          ?>
             <a href="products.php?s_id=<?php echo $row['shop_id'] ?>">
                <div class="card">
-                  <img src="img/shop.png" alt="shop" style="width:80%" height="80%" style="align-items: center;">
+                  <img src="img/shop1.png" alt="shop" style="width:110%" height="80%" style="align-items: center;">
                   <div class="container">
                      <h5><?php echo strtoupper($row['shop_name']);  ?></h5>
                   </div>

@@ -55,7 +55,7 @@ session_start();
             ?>
                 <a href="viewproduct_s.php?p_id=<?php echo $row['product_id']; ?>">
                     <div class="card">
-                        <div style="width: 90%; height: 80%; object-fit: contain;"><img src="<?php echo "upload/" . $row['image']; ?>" alt="product" border-radius="10px" width="100%" height="100%" style="align-items: center;"></div>
+                        <div style="width: 90%; height: 80%; object-fit: contain;"><img src="<?php echo "upload/" . $row['image']; ?>" alt="product" border-radius="10px" width="100%" height="100%" style="align-items: center; border-radius:10px;"></div>
                         <div class="container">
                             <h6><?php echo strtoupper($row['product_title']); ?></h6>
                             <h5>₹ <?php echo $row['price']; ?>/-</h5>

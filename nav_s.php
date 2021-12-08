@@ -57,7 +57,7 @@ function addMenu($pageName)
                 <h1>ShopX</h1>
             </div>
             <div class="topnav">
-                <a href="./myproducts.php" style = "margin-left: 50px;" '  . ($pageName == "mp" ? "class=\"active\"" : "") . '  >My Products</a>
+                <a href="./myproducts.php" style = "margin-left: 10px;" '  . ($pageName == "mp" ? "class=\"active\"" : "") . '  >My Products</a>
                 <a href="./newsfeed_s.php" style = "margin-right: 170px;" ' . ($pageName == "newsfeed" ? "class=\"active\"" : "") . '>Newsfeed</a>
             </div>
             <a href = "./profile.php">
