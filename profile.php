@@ -21,7 +21,7 @@ session_start();
 <body>
 
     <div class="box11">
-    <div id="menu">
+        <div id="menu">
             <?php
             include('nav_s.php');
             echo addMenu("");
@@ -36,26 +36,26 @@ session_start();
                     <img src="./img/4025692.jpg" alt="" width="370px" height="370px">
                 </div> -->
                 <div class="productform1">
-                   
+
                     <div class="txtfield">
                         <input type="file" id="image-input" name="post_image" accept="image/*">
                     </div>
-                    
-                    <div >
+
+                    <div>
                         <br>
                         <input class="form-control" name="caption" type="text" placeholder="caption">
                     </div>
-                    
+
                     <button class="btn">Add</button>
                 </div>
             </div>
-    </form>
-    <br>
-   <br>
-   <br>
-    <div class="newsfeeds">
+        </form>
+        <br>
+        <br>
+        <br>
+        <div class="newsfeeds">
 
-    <?php
+            <?php
             // include './login/db_connect.php';
             // session_start();
             $sid = $_SESSION["shopid"];
@@ -68,14 +68,25 @@ session_start();
                 echo "no posts";
             }
             while ($row = mysqli_fetch_assoc($res)) {
+                $shopid_post = $row['user_id'];
             ?>
                 <div class="newscard">
-                <h6><b>Classic Fashion Store</b></h6>
-                <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" width="260px">
-                <div class="Caption">
-                    <p><?php echo $row['caption']; ?> </p>
+                    <h6>
+                        <img src="./img/user.png" width="30px" height="30px">
+                        <b>
+                            <?php
+                            $sql1 = "SELECT * FROM shop WHERE shop_id='$shopid_post'";
+                            $res1 = mysqli_query($conn, $sql1);
+                            $shopname = mysqli_fetch_assoc($res1);
+                            echo $shopname['shop_name'];
+                            ?>
+                        </b>
+                    </h6>
+                    <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" width="260px">
+                    <div class="Caption">
+                        <p><?php echo $row['caption']; ?> </p>
+                    </div>
                 </div>
-            </div>
             <?php
             }
 

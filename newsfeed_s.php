@@ -16,6 +16,15 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0206006232.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+    <script>
+        $(document).ready(function() {
+            $(".like").click(function() {
+                $(this).toggleClass("heart");
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -38,7 +47,7 @@ session_start();
             // session_start();
             $sid = $_SESSION["shopid"];
 
-            $sql = "SELECT photo, caption, timestamp FROM `posts` ORDER BY timestamp DESC ";
+            $sql = "SELECT * FROM `posts` ORDER BY timestamp DESC ";
             $res = mysqli_query($conn, $sql);
             $num = mysqli_num_rows($res);
 
@@ -46,12 +55,27 @@ session_start();
                 echo "no posts";
             }
             while ($row = mysqli_fetch_assoc($res)) {
+                $shopid_post = $row['user_id'];
             ?>
                 <div class="newscard">
-                    <h6><b>Classic Fashion Store</b></h6>
-                    <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" width="260px">
+                    <h6>
+                        <img src="./img/user.png" width="30px" height="30px">
+
+                        <b>
+                            <?php
+                            $sql1 = "SELECT * FROM shop WHERE shop_id='$shopid_post' ";
+                            $res1 = mysqli_query($conn, $sql1);
+                            $shopname = mysqli_fetch_assoc($res1);
+                            echo $shopname['shop_name'];
+                            ?>
+                        </b>
+                    </h6>
+                    <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" width="260px" style="border-radius: 10px;">
                     <div class="Caption">
-                        <p><?php echo $row['caption']; ?> </p>
+                        <p>
+                            <a href="#" style="font-size: 25px; color:lightgrey;" class="like"><i class="fa fa-heart" aria-hidden="true"></i> </a>
+                            <?php echo $row['caption']; ?>
+                        </p>
                     </div>
                 </div>
             <?php
