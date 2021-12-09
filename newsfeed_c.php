@@ -23,7 +23,13 @@ session_start();
             $(".like").click(function() {
                 $(this).toggleClass("heart");
             });
+
         });
+    </script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
     </script>
 </head>
 
@@ -57,23 +63,28 @@ session_start();
                 $shopid_post = $row['user_id'];
             ?>
                 <div class="newscard">
-                    <h6>
-                        <a href="products.php?s_id=<?php echo $row['user_id'] ?>">
-                            <img src="./img/user.png" width="30px" height="30px">
-                            <b>
-                                <?php
-                                $sql1 = "SELECT * FROM shop WHERE shop_id='$shopid_post'";
-                                $res1 = mysqli_query($conn, $sql1);
-                                $shopname = mysqli_fetch_assoc($res1);
-                                echo $shopname['shop_name'];
-                                ?>
-                            </b>
-                        </a>
-                    </h6>
-                    <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" width="260px" style="border-radius: 10px;">
+                    <div class="news">
+                        <h6>
+                            <a href="products.php?s_id=<?php echo $row['user_id'] ?>">
+                                <img src="./img/user.png" width="30px" height="30px">
+                                <b>
+                                    <?php
+                                    $sql1 = "SELECT * FROM shop WHERE shop_id='$shopid_post'";
+                                    $res1 = mysqli_query($conn, $sql1);
+                                    $shopname = mysqli_fetch_assoc($res1);
+                                    echo $shopname['shop_name'];
+                                    ?>
+                                </b>
+                            </a>
+                            <br>
+                        </h6>
+                       
+                            <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" class="image">
+                        <!-- <a href="#" style="font-size: 25px; color:lightgrey;" class="like" ><i class="fa fa-heart" aria-hidden="true" name="like"></i> </a>
+                        <?php echo $row['likes']; ?> likes -->
+                    </div>
                     <div class="Caption">
                         <p>
-                            <a href="#" style="font-size: 25px; color:lightgrey;" class="like"><i class="fa fa-heart" aria-hidden="true"></i> </a>
                             <?php echo $row['caption']; ?>
                         </p>
                     </div>

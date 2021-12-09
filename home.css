@@ -3,7 +3,7 @@
     padding: 0%;
 }
 body{
-    background-color: #fdbc0c;
+    background-color: #fdbc0c !important;
   /* background-image: linear-gradient(to bottom right,#fec196,#f0835c); */
 
 }

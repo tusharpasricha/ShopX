@@ -25,6 +25,11 @@ session_start();
             });
         });
     </script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </head>
 
 <body>
@@ -58,22 +63,26 @@ session_start();
                 $shopid_post = $row['user_id'];
             ?>
                 <div class="newscard">
-                    <h6>
-                        <img src="./img/user.png" width="30px" height="30px">
+                    <div class="news">
+                        <h6>
+                            <img src="./img/user.png" width="30px" height="30px">
+                            <b>
+                                <?php
+                                $sql1 = "SELECT * FROM shop WHERE shop_id='$shopid_post'";
+                                $res1 = mysqli_query($conn, $sql1);
+                                $shopname = mysqli_fetch_assoc($res1);
+                                echo $shopname['shop_name'];
+                                ?>
+                            </b>
+                            <br>
+                        </h6>
 
-                        <b>
-                            <?php
-                            $sql1 = "SELECT * FROM shop WHERE shop_id='$shopid_post' ";
-                            $res1 = mysqli_query($conn, $sql1);
-                            $shopname = mysqli_fetch_assoc($res1);
-                            echo $shopname['shop_name'];
-                            ?>
-                        </b>
-                    </h6>
-                    <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" width="260px" style="border-radius: 10px;">
+                        <img src="<?php echo "posts/" . $row['photo']; ?>" alt="post" class="image">
+                        <!-- <a href="#" style="font-size: 25px; color:lightgrey;" class="like" ><i class="fa fa-heart" aria-hidden="true" name="like"></i> </a>
+                        <?php echo $row['likes']; ?> likes -->
+                    </div>
                     <div class="Caption">
                         <p>
-                            <a href="#" style="font-size: 25px; color:lightgrey;" class="like"><i class="fa fa-heart" aria-hidden="true"></i> </a>
                             <?php echo $row['caption']; ?>
                         </p>
                     </div>

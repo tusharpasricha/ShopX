@@ -21,7 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $num = mysqli_num_rows($res);
    $row = mysqli_fetch_assoc($res);
    if ($num <= 0) {
-      echo "invalid credentials";
+      //    echo '<div class="alert alert-danger" role="alert">
+      //    invalid credentials
+      //  </div>';
    } else {
       if ($row['acc_type'] == 1101) {
          $_SESSION['loggedin'] = true;

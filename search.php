@@ -16,6 +16,11 @@ session_start();
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 </head>
 
 <body>
@@ -67,7 +72,7 @@ session_start();
                ?>
                   <a href="products.php?s_id=<?php echo $row2['shop_id'] ?>">
                      <div class="card">
-                        <img src="img/shop.png" alt="shoe" style="width:80%" height="80%" style="align-items: center;">
+                        <img src="img/shop1.png" alt="shop" style="width:110%" height="80%" style="align-items: center;">
                         <div class="container">
                            <h6><b><?php echo $row2['shop_name'];  ?></b></h6>
                         </div>

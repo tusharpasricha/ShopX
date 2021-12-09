@@ -18,6 +18,8 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/0206006232.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         .topnav {
             margin-left: 200px;
@@ -73,17 +75,7 @@ session_start();
         }
     </style>
     <script>
-        $(document).ready(function() {
-            $("#heart").click(function() {
-                if ($("#heart").hasClass("liked")) {
-                    $("#heart").html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
-                    $("#heart").removeClass("liked");
-                } else {
-                    $("#heart").html('<i class="fa fa-heart" aria-hidden="true"></i>');
-                    $("#heart").addClass("liked");
-                }
-            });
-        });
+        alert("hello");
     </script>
 </head>
 

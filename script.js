@@ -1,3 +1,4 @@
+//hyyyy!!
 const btn = document.querySelector(".nav-toggle");
 const links = document.querySelector(".toogle__items");
 
@@ -18,20 +19,16 @@ function register_user() {
     var name = document.getElementById("name").value;
     var acc_type = document.getElementById("acc_type").value;
     var email = document.getElementById("email").value;
-  var password = document.getElementById("Password").value;
-  var cnfrmpassword = document.getElementById("cnfrmPassword").value;
-  var usrname = document.getElementById("username").value;
+    var password = document.getElementById("Password").value;
+    var cnfrmpassword = document.getElementById("cnfrmPassword").value;
+    var usrname = document.getElementById("username").value;
   
 
   if (email==="" | password === "" || cnfrmpassword === "" || acc_type ==="" ||name==="" ||usrname==="" ) {
-      console.log(userId);
-      console.log(password);
-      console.log(cnfrmpassword);
-      console.log(acc_type);
-      console.log(name);
-      console.log(username);
-
-  } else {
+    alert("field cant be empty);"
+  }
+   else 
+   {
       var userid = userId;
       var pass = password;
       var cpass = cnfrmpassword;
@@ -40,10 +37,11 @@ function register_user() {
       var 
   }
 
-  }
-   else if (checkname(Firstname) === false) {
+  
+   else (checkname(Firstname) === false) {
     document.getElementById("fnameValid").innerHTML = "Alphabets only!";
-  } else {
+  } 
+  else if {
     var fName = Firstname;
   }
   if (Lastname === "") {

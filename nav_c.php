@@ -46,6 +46,7 @@
         background-position: 190px;
         background-repeat: no-repeat;
     }
+
 </style>
 <?php
 
