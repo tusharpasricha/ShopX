@@ -1,6 +1,6 @@
 <?php
 require('./login/db_connect.php');
-session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,15 +52,14 @@ session_start();
                   </div>
                </div>
             </a>
-   <?php
+         <?php
          }
 
-   ?>
+         ?>
+
+      </div>
 
    </div>
-
-   </div>
-
 </body>
 
 </html>

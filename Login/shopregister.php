@@ -1,12 +1,8 @@
 <?php
-//(SELECT user_name from user where user_id='$userid')
-echo '<div class="alert alert-primary" role="alert">
-This is a primary alert—check it out!
-</div>';
+require('./Login/alert.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $err = false;
    include './db_connect.php';
-   session_start();
    $sname = $_POST["sname"];
    strtoupper($sname);
    $gstin = $_POST["gstin"];
@@ -47,6 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
+<script>
+   if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+   }
+</script>
 
 <body>
    <div class="box">
@@ -61,27 +62,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                      <h2>Create your Shop</h2>
                      <div class="txt_field mb-3">
                         <label for="exampleInputEmail1" class="form-label">Shop Name</label>
-                        <input type="text" name="sname" placeholder="Shop Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                        <input type="text" name="sname" placeholder="Shop Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" required minlength="5">
                      </div>
                      <div class="txt_field mb-3">
                         <label for="exampleInputEmail1" class="form-label">GSTIN</label>
-                        <input type="alphanumeric" name="gstin" placeholder="GSTIN" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                        <input type="alphanumeric" name="gstin" placeholder="GSTIN" class="form-control" id="exampleInputName" aria-describedby="emailHelp" required minlength="15" maxlength="15">
                      </div>
                      <div class="txt_field mb-3">
                         <label for="exampleInputEmail1" class="form-label">Locality</label>
-                        <input type="text" name="locality" placeholder="Locality" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                        <input type="text" name="locality" placeholder="Locality" class="form-control" id="exampleInputName" aria-describedby="emailHelp" required>
                      </div>
                      <div class="txt_field mb-3">
                         <label for="exampleInputEmail1" class="form-label">State</label>
-                        <input type="text" name="state" placeholder="State" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                        <input type="text" name="state" placeholder="State" class="form-control" id="exampleInputName" aria-describedby="emailHelp" required>
                      </div>
                      <div class="txt_field mb-3">
                         <label for="exampleInputEmail1" class="form-label">City</label>
-                        <input type="text" name="city" placeholder="City" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                        <input type="text" name="city" placeholder="City" class="form-control" id="exampleInputName" aria-describedby="emailHelp" required>
                      </div>
                      <div class="txt_field mb-3">
                         <label for="exampleInputEmail1" class="form-label">Pincode</label>
-                        <input type="numeric" name="pincode" placeholder="Pincode" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                        <input type="numeric" name="pincode" placeholder="Pincode" class="form-control" id="exampleInputName" aria-describedby="emailHelp" required minlength="6" maxlength="6">
                      </div>
 
                      <button type="submit" class="btn"> Create</button>

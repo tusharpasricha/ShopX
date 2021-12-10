@@ -80,6 +80,9 @@ session_start();
 </head>
 
 <body>
+    <script type="text/JavaScript">
+        swal("Oops...", "Something went wrong!", "error");
+     </script>
     <div class="box1">
         <div id="menu">
             <?php

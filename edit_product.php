@@ -1,33 +1,30 @@
 <?php
 include './login/db_connect.php';
-session_start();
 
-if(isset($_GET['p_id']))
-{
+if (isset($_GET['p_id'])) {
     $product_id = $_GET['p_id'];
 }
-if(isset($product_id))
-{
-$query = "SELECT * FROM products WHERE product_id='$product_id' ";
-$result = mysqli_query($conn, $query);
-$data = mysqli_fetch_assoc($result);
+if (isset($product_id)) {
+    $query = "SELECT * FROM products WHERE product_id='$product_id' ";
+    $result = mysqli_query($conn, $query);
+    $data = mysqli_fetch_assoc($result);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    if(isset($_FILES['image']['type'][0])){
+
+    if (isset($_FILES['image']['type'][0])) {
         $ImageType = $_FILES['image']['type'][0];
         $output_dir = "upload/";/* Path for file upload */
         $RandomNum = time();
         $ImageName = str_replace(' ', '-', strtolower($_FILES['image']['name'][0]));
-        
-    
+
+
         $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
         $ImageExt = str_replace('.', '', $ImageExt);
         $ImageName = preg_replace("/\.[^.\s]{3,4}$/", "", $ImageName);
         $NewImageName = $ImageName . '-' . $RandomNum . '.' . $ImageExt;
         $ret[$NewImageName] = $output_dir . $NewImageName;
-    
+
         /* Try to create the directory if it does not exist */
         if (!file_exists($output_dir)) {
             @mkdir($output_dir, 0777);
@@ -35,21 +32,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             move_uploaded_file($_FILES['image']['tmp_name'], $output_dir . $NewImageName);
         }
     }
-    
-    if(!isset($NewImageName)){
-        $NewImageName=$data['image'];
+
+    if (!isset($NewImageName)) {
+        $NewImageName = $data['image'];
     }
     echo $NewImageName;
     $product_id = $_GET['p_id'];
 
     $shopid = $_SESSION['shopid'];
-    $sql = "UPDATE `products` SET `product_desc`=' ".$_POST['prod_desc']."',`product_title`='".$_POST['prod_name']."',`price`='".$_POST['price']."' , `image` ='$NewImageName' WHERE product_id = '$product_id' ";
+    $sql = "UPDATE `products` SET `product_desc`=' " . $_POST['prod_desc'] . "',`product_title`='" . $_POST['prod_name'] . "',`price`='" . $_POST['price'] . "' , `image` ='$NewImageName' WHERE product_id = '$product_id' ";
     $res = mysqli_query($conn, $sql);
     if (!$res) {
         die("SQL query failed: " . mysqli_error($conn));
+        $_SESSION['status'] = "ERROR OCCURED!";
+        $_SESSION['status_code'] = "error";
     } else {
-        
-       header("Location:./myproducts.php");
+
+        header("Location:./myproducts.php");
     }
 }
 ?>
@@ -84,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="./edit_product.php?p_id=<?php echo $product_id; ?>" method="post" enctype="multipart/form-data">
             <div class="addproduct">
                 <div class="vector">
-                    <img src="<?php echo "upload/" .$data['image'] ; ?>" alt="" width="370px" height="370px">
+                    <img src="<?php echo "upload/" . $data['image']; ?>" alt="" width="370px" height="370px">
                 </div>
                 <div class="productform">
                     <div class="txtfield">
@@ -113,6 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </div>
     </form>
+    <?php require("./login/alert.php"); ?>
 
 </body>
 

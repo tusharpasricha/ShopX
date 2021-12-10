@@ -1,7 +1,7 @@
 <?php
 require('./login/db_connect.php');
 require_once('getfunction.php');
-session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

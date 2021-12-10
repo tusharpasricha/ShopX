@@ -1,5 +1,5 @@
 <?php
-require('./login/db_connect.php');
+//require('./login/db_connect.php');
 
 
 function get_product($prod_id){

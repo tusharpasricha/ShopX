@@ -1,4 +1,6 @@
 <?php
+require("./login/alert.php");
+
 $output_dir = "posts/";/* Path for file upload */
 $RandomNum = time();
 $ImageName = str_replace(' ', '-', strtolower($_FILES['post_image']['name'][0]));
@@ -19,7 +21,6 @@ if (!file_exists($output_dir)) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   include './login/db_connect.php';
-  session_start();
 
 
   $post_image = $NewImageName;
@@ -30,6 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!$res) {
     die("SQL query failed: " . mysqli_error($conn));
+    $_SESSION['status'] = "ERROR OCCURED!";
+    $_SESSION['status_code'] = "error";
   } else {
     header("Location:./profile.php");
     echo "post created";
