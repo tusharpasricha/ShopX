@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    include './db_connect.php';
@@ -21,12 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $sql2 = "SELECT * from shop where owner_id = '$username' ";
       $query = mysqli_query($conn, $sql2);
       $data = mysqli_fetch_assoc($query);
-      $shopid = $data['shop_id'];
-      $_SESSION['shopid'] = $shopid;
+
 
       if ($row['acc_type'] == 1101) {
          $_SESSION['loggedin'] = true;
          $_SESSION['acc_type'] = $acc_type;
+         $shopid = $data['shop_id'];
+         $_SESSION['shopid'] = $shopid;
          $sql1 = "SELECT * from shop where owner_id='$username'";
          $check = mysqli_query($conn, $sql1);
          $fetchshop = mysqli_fetch_assoc($check);
@@ -42,10 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } else if ($row['acc_type'] == 1102) {
          $_SESSION['loggedin'] = true;
          $_SESSION['acc_type'] = $acc_type;
-         
+
          $_SESSION['status'] = "Login Successful!";
          $_SESSION['status_code'] = "success";
-         header('Refresh: 1;url=../customer.php');
+          header('Refresh: 1;url=../customer.php');
       }
    }
 }
@@ -109,7 +110,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
          </div>
          <div class="cont2">
-            <img src="../img/landin page vector.png" alt="" width="660px" height="630px">
+            <a href="../dc.php">
+               <img src="../img/landin page vector.png" alt="" width="660px" height="630px">
+            </a>
          </div>
       </div>
    </div>
