@@ -23,7 +23,6 @@ require_once('getfunction.php');
             emailjs.init("user_Ida2B4h3hA1PCx42QkSUZ");
         })();
     </script>
-    <script type="text/javascript" src="./email.js"></script>
 </head>
 <script>
     if (window.history.replaceState) {
@@ -55,20 +54,38 @@ require_once('getfunction.php');
 
                     $row = mysqli_fetch_assoc($products);
                 }
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $sql = "SELECT * FROM users WHERE user_name = (SELECT owner_id FROM shop WHERE shop_id = (SELECT shop_id FROM products WHERE product_id='$productid'))";
                     $res = mysqli_query($conn, $sql);
                     $r = mysqli_fetch_assoc($res);
                     $msg = "Hello " . $r['user_name']; 
-                }
+                // }
                 ?>
                 <script>
-                    let name = '<?= $_SESSION['username'] ?>';
-                    let mail = '<?= $r['email'] ?>';
-                    let msg = '<?= $msg ?>';
+                    var name = '<?= $_SESSION['username'] ?>';
+                    var mail = '<?= $r['email'] ?>';
+                    var msg = '<?= $msg ?>';
                     console.log(name);
                     console.log(mail);
                     console.log(msg);
+                    function sendmail(customer, seller_mail, msg) {
+                            console.log('SUCCESS!');
+                            emailjs.init('user_Ida2B4h3hA1PCx42QkSUZ');
+                            emailjs.send("service_5ojsiec", "template_iz8lq9p", {
+                                from_name: customer,
+                                to_name: seller_mail,
+                                message: msg,
+                            }).then(
+              function (response) {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Mail sent successfully");
+              },
+              function (error) {
+                console.log("FAILED...", error);
+                alert("Failed to connect");
+              }
+            );
+                            }
                 </script>
 
                 <img class="image" src="<?php echo "upload/" . $row['image']; ?>" alt="product" ">
@@ -82,9 +99,8 @@ require_once('getfunction.php');
                 <div class="txtfield">
                     <h1>₹ <?php echo $row['price']; ?> /-</h1>
                 </div>
-                <form method="post" action="viewproduct.php?p_id=<?php echo $row['product_id']; ?>">
-                    <button class="btn" name="sendmail" onclick="sendmail(name, mail, msg)">Request Details</button>
-                </form>
+                
+                    <button class="btn" name="sendmail" onclick="sendmail(name,mail,msg)">Request Details</button>
             </div>
         </div>
     </div>
