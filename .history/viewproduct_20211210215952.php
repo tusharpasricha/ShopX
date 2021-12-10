@@ -18,12 +18,30 @@ require_once('getfunction.php');
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         (function() {
             emailjs.init("user_Ida2B4h3hA1PCx42QkSUZ");
         })();
     </script>
-    <script type="text/javascript" src="./email.js"></script>
+    <script type="text/javascript" src="./email.js"></script> -->
+    <script>
+    document.getElementById("m").addEventListener('click' ,function sendmail(customer, seller_mail, msg){
+    console.log('SUCCESS!');
+    
+    }
+    )
+   
+    function sendmail(customer, seller_mail, msg) {
+    console.log('SUCCESS!');
+    emailjs.init('user_Ida2B4h3hA1PCx42QkSUZ');
+    emailjs.send(service_5ojsiec, template_iz8lq9p, {
+        from_name: customer,
+        to_name: seller_mail,
+        message: msg,
+    });
+}
+
+    </script>
 </head>
 <script>
     if (window.history.replaceState) {
@@ -83,7 +101,7 @@ require_once('getfunction.php');
                     <h1>₹ <?php echo $row['price']; ?> /-</h1>
                 </div>
                 <form method="post" action="viewproduct.php?p_id=<?php echo $row['product_id']; ?>">
-                    <button class="btn" name="sendmail" onclick="sendmail(name, mail, msg)">Request Details</button>
+                    <button class="btn" name="sendmail" id = "m" onclick="sendmail(name, mail, msg)">Request Details</button>
                 </form>
             </div>
         </div>

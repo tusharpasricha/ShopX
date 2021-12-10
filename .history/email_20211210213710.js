@@ -18,7 +18,7 @@
 // msg --> customer-details + product details ,
 // you will be contact shortly.....
 function sendmail(customer, seller_mail, msg) {
-    console.log('SUCCESS!');
+   
     emailjs.init('user_Ida2B4h3hA1PCx42QkSUZ');
     emailjs.send(service_5ojsiec, template_iz8lq9p, {
         from_name: customer,

@@ -59,7 +59,7 @@ require_once('getfunction.php');
                     $sql = "SELECT * FROM users WHERE user_name = (SELECT owner_id FROM shop WHERE shop_id = (SELECT shop_id FROM products WHERE product_id='$productid'))";
                     $res = mysqli_query($conn, $sql);
                     $r = mysqli_fetch_assoc($res);
-                    $msg = "Hello " . $r['user_name']; 
+                    $msg = "Hello " . $r['user_name'] . ",\n"; 
                 }
                 ?>
                 <script>
@@ -68,7 +68,7 @@ require_once('getfunction.php');
                     let msg = '<?= $msg ?>';
                     console.log(name);
                     console.log(mail);
-                    console.log(msg);
+                    // consol.log(msg);
                 </script>
 
                 <img class="image" src="<?php echo "upload/" . $row['image']; ?>" alt="product" ">
