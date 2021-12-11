@@ -40,12 +40,10 @@ require_once('getfunction.php');
                     <a href="https://www.linkedin.com/in/naman-gupta-3474151b7/" style="color: black;">
                         <h2>Naman Gupta</h2>
                     </a>
-                    <!-- </div>
-                <div style="display: flex; flex-direction:column;"> -->
-                    <a href="" style="color: black;">
+                    <a href="https://www.linkedin.com/in/sarthak-gupta-379890202" style="color: black;">
                         <h2>Sarthak Gupta</h2>
                     </a>
-                    <a href="" style="color: black;">
+                    <a href="https://www.linkedin.com/in/tusharpasricha" style="color: black;">
                         <h2>Tushar Pasricha</h2>
                     </a>
                 </div>

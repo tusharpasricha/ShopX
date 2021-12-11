@@ -1,5 +1,5 @@
 <?php
-require('./Login/alert.php');
+require('./alert.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $err = false;
    include './db_connect.php';

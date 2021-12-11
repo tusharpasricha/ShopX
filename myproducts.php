@@ -52,7 +52,7 @@ require('./login/db_connect.php');
             $num = mysqli_num_rows($res);
 
             if ($num <= 0) {
-                echo "no product";
+                // echo "no product";
             }
             while ($row = mysqli_fetch_assoc($res)) {
             ?>
